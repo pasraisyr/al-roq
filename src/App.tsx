@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-alroq-black text-alroq-muted selection:bg-alroq-gold/30 selection:text-alroq-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#0A0A0A] text-[#888888] selection:bg-[#C9A84C]/30 selection:text-[#F5F3EE] font-sans antialiased overflow-x-hidden">
       {/* Background ambient texture */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
          <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@ function App() {
       </div>
 
       {/* Navbar */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-alroq-black/90 backdrop-blur-md border-b border-alroq-border py-4' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#0A0A0A]/90 backdrop-blur-md border-b border-[#222222] py-4' : 'bg-transparent py-6'}`}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-center">
             <motion.div
@@ -46,7 +46,7 @@ function App() {
               transition={{ duration: 1 }}
               className="flex-shrink-0 flex items-center"
             >
-              <span className="text-2xl font-bebas text-alroq-white tracking-widest">
+              <span className="text-2xl font-bebas text-[#F5F3EE] tracking-widest">
                 ALROQ
               </span>
             </motion.div>
@@ -54,22 +54,22 @@ function App() {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-10">
               {['PRODUCTS', 'SERVICES', 'PROCESS', 'CONTACT'].map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} className="font-mono text-xs text-alroq-gold tracking-widest hover:text-alroq-white transition-colors uppercase">
+                <a key={item} href={`#${item.toLowerCase()}`} className="font-mono text-xs text-[#C9A84C] tracking-widest hover:text-[#F5F3EE] transition-colors uppercase">
                   {item}
                 </a>
               ))}
               <a
                 href="https://wa.me/60137977986"
-                className="group relative px-6 py-2 border border-alroq-gold text-xs tracking-widest font-mono text-alroq-gold overflow-hidden uppercase hover:border-alroq-gold transition-colors"
+                className="group relative px-6 py-2 border border-[#C9A84C] text-xs tracking-widest font-mono text-[#C9A84C] overflow-hidden uppercase hover:border-[#C9A84C] transition-colors"
               >
-                <div className="absolute inset-0 bg-alroq-gold translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+                <div className="absolute inset-0 bg-[#C9A84C] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
                 <span className="relative z-10 group-hover:text-alroq-black transition-colors duration-300">LET'S BUILD</span>
               </a>
             </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-alroq-gold">
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-[#C9A84C]">
                 {isMenuOpen ? <X size={24} strokeWidth={1} /> : <Menu size={24} strokeWidth={1} />}
               </button>
             </div>
@@ -83,11 +83,11 @@ function App() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 w-full bg-alroq-black border-b border-alroq-border py-8 px-6"
+              className="absolute top-full left-0 w-full bg-[#0A0A0A] border-b border-[#222222] py-8 px-6"
             >
               <div className="flex flex-col space-y-6">
                 {['PRODUCTS', 'SERVICES', 'PROCESS', 'CONTACT'].map((item) => (
-                  <a key={item} href={`#${item.toLowerCase()}`} className="font-mono text-sm tracking-widest text-alroq-gold hover:text-alroq-white uppercase">
+                  <a key={item} href={`#${item.toLowerCase()}`} className="font-mono text-sm tracking-widest text-[#C9A84C] hover:text-[#F5F3EE] uppercase">
                     {item}
                   </a>
                 ))}
@@ -102,28 +102,28 @@ function App() {
         {/* Concentric circles top right */}
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-10 pointer-events-none">
           {[800, 600, 400, 200].map((size, i) => (
-            <div key={i} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-alroq-gold" style={{ width: size, height: size }}></div>
+            <div key={i} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#C9A84C]" style={{ width: size, height: size }}></div>
           ))}
         </div>
 
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 w-full">
           <motion.div style={{ y: y1, opacity: opacity1 }} className="max-w-4xl">
             <FadeIn delay={0.2} direction="up">
-              <span className="font-mono text-xs tracking-widest text-alroq-gold uppercase block mb-8">
+              <span className="font-mono text-xs tracking-widest text-[#C9A84C] uppercase block mb-8">
                 ALROQ — THE SOFTWARE FACTORY
               </span>
             </FadeIn>
 
             <FadeIn delay={0.4} direction="up">
-              <h1 className="font-bebas text-6xl md:text-8xl lg:text-[100px] leading-[0.9] text-alroq-white mb-8">
+              <h1 className="font-bebas text-6xl md:text-8xl lg:text-[100px] leading-[0.9] text-[#F5F3EE] mb-8">
                 YOUR ONE-STOP<br/>
                 DIGITAL BACKBONE<br/>
-                <span className="text-alroq-gold">FOR EVERY BUSINESS.</span>
+                <span className="text-[#C9A84C]">FOR EVERY BUSINESS.</span>
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.6} direction="up">
-              <p className="font-sans text-lg text-alroq-muted mb-12 max-w-2xl leading-relaxed">
+              <p className="font-sans text-lg text-[#888888] mb-12 max-w-2xl leading-relaxed">
                 We build ready-to-deploy software products that solve real business problems — fast, affordable, and tailored to your operations. From F&B to healthcare, education to enterprise: if your business runs on it, we have already built it.
               </p>
             </FadeIn>
@@ -132,7 +132,7 @@ function App() {
       </section>
 
       {/* Stats Section (Slide 01 bottom) */}
-      <section className="py-20 border-y border-alroq-border bg-[#111111] relative z-10">
+      <section className="py-20 border-y border-[#222222] bg-[#111111] relative z-10">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-6 text-center">
             {[
@@ -142,8 +142,8 @@ function App() {
               { label: "COMPANIES", value: "100+" }
             ].map((stat, idx) => (
               <StaggerItem key={idx}>
-                <div className="font-bebas text-6xl md:text-7xl text-alroq-gold mb-4">{stat.value}</div>
-                <div className="font-mono text-xs tracking-[0.2em] text-alroq-muted uppercase">{stat.label}</div>
+                <div className="font-bebas text-6xl md:text-7xl text-[#C9A84C] mb-4">{stat.value}</div>
+                <div className="font-mono text-xs tracking-[0.2em] text-[#888888] uppercase">{stat.label}</div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -151,7 +151,7 @@ function App() {
           <FadeIn delay={0.4} className="mt-20">
             <div className="flex flex-wrap justify-center gap-3">
               {['F&B', 'EDUCATION', 'HEALTHCARE', 'RETAIL', 'MANUFACTURING', 'LOGISTICS', 'PROPERTY', 'EVENTS', 'CONSTRUCTION', 'SERVICES', 'TRADING', 'HOSPITALITY', 'GOVERNMENT', 'FINANCIAL SERVICES', 'NGO'].map((tag) => (
-                <span key={tag} className="font-mono text-[10px] text-alroq-secondary border border-[#2A2A2A] px-4 py-2 rounded-sm uppercase tracking-widest bg-alroq-card">
+                <span key={tag} className="font-mono text-[10px] text-[#666666] border border-[#2A2A2A] px-4 py-2 rounded-sm uppercase tracking-widest bg-[#181818]">
                   {tag}
                 </span>
               ))}
@@ -164,8 +164,8 @@ function App() {
       <section id="products" className="py-32 relative z-10">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <FadeIn>
-            <div className="font-mono text-xs tracking-widest text-alroq-gold uppercase mb-4">ALROQ ECOSYSTEM</div>
-            <h2 className="font-bebas text-5xl md:text-7xl text-alroq-white mb-20">SIX PRODUCTS. EVERY INDUSTRY.</h2>
+            <div className="font-mono text-xs tracking-widest text-[#C9A84C] uppercase mb-4">ALROQ ECOSYSTEM</div>
+            <h2 className="font-bebas text-5xl md:text-7xl text-[#F5F3EE] mb-20">SIX PRODUCTS. EVERY INDUSTRY.</h2>
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -208,22 +208,22 @@ function App() {
               }
             ].map((product, idx) => (
               <StaggerItem key={idx}>
-                <div className="bg-alroq-card border border-alroq-border border-l-2 border-l-alroq-gold p-8 h-full flex flex-col hover:border-alroq-gold/50 transition-colors">
-                  <h3 className="font-bebas text-3xl text-alroq-white mb-1">{product.title}</h3>
-                  <div className="font-mono text-[10px] tracking-widest text-alroq-gold uppercase mb-6">{product.subtitle}</div>
+                <div className="bg-[#181818] border border-[#222222] border-l-2 border-l-alroq-gold p-8 h-full flex flex-col hover:border-[#C9A84C]/50 transition-colors">
+                  <h3 className="font-bebas text-3xl text-[#F5F3EE] mb-1">{product.title}</h3>
+                  <div className="font-mono text-[10px] tracking-widest text-[#C9A84C] uppercase mb-6">{product.subtitle}</div>
 
                   <div className="mb-6">
-                    <div className="font-mono text-[9px] tracking-widest text-alroq-secondary uppercase mb-2">Industries</div>
-                    <p className="font-sans text-xs text-alroq-muted leading-relaxed">{product.industries}</p>
+                    <div className="font-mono text-[9px] tracking-widest text-[#666666] uppercase mb-2">Industries</div>
+                    <p className="font-sans text-xs text-[#888888] leading-relaxed">{product.industries}</p>
                   </div>
 
                   <div className="mt-auto pt-6 border-t border-[#2A2A2A]">
-                    <div className="font-mono text-[9px] tracking-widest text-alroq-secondary uppercase mb-3">Core Features</div>
+                    <div className="font-mono text-[9px] tracking-widest text-[#666666] uppercase mb-3">Core Features</div>
                     <ul className="space-y-2">
                       {product.features.map((feat, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <Check className="w-3 h-3 text-alroq-gold mt-1 flex-shrink-0" />
-                          <span className="font-sans text-xs text-alroq-muted">{feat}</span>
+                          <Check className="w-3 h-3 text-[#C9A84C] mt-1 flex-shrink-0" />
+                          <span className="font-sans text-xs text-[#888888]">{feat}</span>
                         </li>
                       ))}
                     </ul>
@@ -236,10 +236,10 @@ function App() {
       </section>
 
       {/* Speed & Process Section (Slide 03) */}
-      <section id="process" className="py-32 bg-alroq-black relative z-10 border-t border-alroq-border">
+      <section id="process" className="py-32 bg-[#0A0A0A] relative z-10 border-t border-[#222222]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <FadeIn>
-            <h2 className="font-bebas text-5xl md:text-7xl text-alroq-white mb-20 text-center">YOUR SOFTWARE. IN DAYS. NOT MONTHS.</h2>
+            <h2 className="font-bebas text-5xl md:text-7xl text-[#F5F3EE] mb-20 text-center">YOUR SOFTWARE. IN DAYS. NOT MONTHS.</h2>
           </FadeIn>
 
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
@@ -249,9 +249,9 @@ function App() {
               { value: "∞", label: "SCALABLE" },
               { value: "DAYS", label: "NOT MONTHS" }
             ].map((stat, idx) => (
-              <StaggerItem key={idx} className="bg-[#111111] border border-alroq-border p-8 text-center">
-                <div className="font-bebas text-5xl text-alroq-gold mb-4">{stat.value}</div>
-                <div className="font-mono text-xs tracking-widest text-alroq-muted uppercase">{stat.label}</div>
+              <StaggerItem key={idx} className="bg-[#111111] border border-[#222222] p-8 text-center">
+                <div className="font-bebas text-5xl text-[#C9A84C] mb-4">{stat.value}</div>
+                <div className="font-mono text-xs tracking-widest text-[#888888] uppercase">{stat.label}</div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -266,21 +266,21 @@ function App() {
               { num: "03", title: "WE BUILD YOUR VERSION", desc: "We add your desired flow and features on top of the base product." },
               { num: "04", title: "GO LIVE. DONE.", desc: "Deploy. Train. Scale. No waiting. No broken promises." }
             ].map((step, idx) => (
-              <FadeIn key={idx} delay={idx * 0.1} className="bg-alroq-black">
-                <div className="font-mono text-sm text-alroq-gold mb-6 border-b border-alroq-border pb-4">{step.num}</div>
-                <h4 className="font-mono text-xs tracking-widest text-alroq-white uppercase mb-4">{step.title}</h4>
-                <p className="font-sans text-sm text-alroq-muted leading-relaxed">{step.desc}</p>
+              <FadeIn key={idx} delay={idx * 0.1} className="bg-[#0A0A0A]">
+                <div className="font-mono text-sm text-[#C9A84C] mb-6 border-b border-[#222222] pb-4">{step.num}</div>
+                <h4 className="font-mono text-xs tracking-widest text-[#F5F3EE] uppercase mb-4">{step.title}</h4>
+                <p className="font-sans text-sm text-[#888888] leading-relaxed">{step.desc}</p>
               </FadeIn>
             ))}
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <FadeIn>
-              <div className="bg-alroq-card border border-alroq-border p-8 md:p-12 h-full">
-                <h4 className="font-mono text-sm tracking-widest text-alroq-secondary uppercase mb-8 pb-4 border-b border-[#2A2A2A]">THE OLD WAY</h4>
+              <div className="bg-[#181818] border border-[#222222] p-8 md:p-12 h-full">
+                <h4 className="font-mono text-sm tracking-widest text-[#666666] uppercase mb-8 pb-4 border-b border-[#2A2A2A]">THE OLD WAY</h4>
                 <ul className="space-y-6">
                   {["6–18 month dev cycles", "Built from scratch every time", "Scope creep & missed deadlines", "One-size-fits-all solutions", "Agencies that disappear after launch"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-4 text-alroq-muted font-sans text-sm">
+                    <li key={i} className="flex items-center gap-4 text-[#888888] font-sans text-sm">
                       <X className="w-4 h-4 text-red-900 flex-shrink-0" />
                       {item}
                     </li>
@@ -289,13 +289,13 @@ function App() {
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <div className="bg-alroq-card border border-alroq-gold p-8 md:p-12 h-full relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-alroq-gold/5 blur-[50px]"></div>
-                <h4 className="font-mono text-sm tracking-widest text-alroq-gold uppercase mb-8 pb-4 border-b border-alroq-gold/20">THE ALROQ WAY</h4>
+              <div className="bg-[#181818] border border-[#C9A84C] p-8 md:p-12 h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9A84C]/5 blur-[50px]"></div>
+                <h4 className="font-mono text-sm tracking-widest text-[#C9A84C] uppercase mb-8 pb-4 border-b border-[#C9A84C]/20">THE ALROQ WAY</h4>
                 <ul className="space-y-6 relative z-10">
                   {["Base system ready in 72 hours", "Start with a proven product base", "Fixed scope, your features added", "100% tailored to your workflow", "Ongoing support and updates"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-4 text-alroq-white font-sans text-sm">
-                      <Check className="w-4 h-4 text-alroq-gold flex-shrink-0" />
+                    <li key={i} className="flex items-center gap-4 text-[#F5F3EE] font-sans text-sm">
+                      <Check className="w-4 h-4 text-[#C9A84C] flex-shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -305,8 +305,8 @@ function App() {
           </div>
 
           <FadeIn delay={0.4}>
-            <div className="border border-alroq-gold p-8 md:p-12 text-center bg-[#0D0A00]">
-              <p className="font-sans text-lg text-alroq-gold max-w-3xl mx-auto leading-relaxed">
+            <div className="border border-[#C9A84C] p-8 md:p-12 text-center bg-[#0D0A00]">
+              <p className="font-sans text-lg text-[#C9A84C] max-w-3xl mx-auto leading-relaxed">
                 Pick our software. Tell us what's missing. Add your desired flow and features. Your budget, your flow. Everyone deserves to get their own software.
               </p>
             </div>
@@ -315,10 +315,10 @@ function App() {
       </section>
 
       {/* Services Section (Slide 04) */}
-      <section id="services" className="py-32 bg-[#0A0A0A] relative z-10 border-t border-alroq-border">
+      <section id="services" className="py-32 bg-[#0A0A0A] relative z-10 border-t border-[#222222]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <FadeIn>
-            <h2 className="font-bebas text-5xl md:text-7xl text-alroq-white mb-20 text-center">BEYOND PRODUCTS. WE BUILD WITH YOU.</h2>
+            <h2 className="font-bebas text-5xl md:text-7xl text-[#F5F3EE] mb-20 text-center">BEYOND PRODUCTS. WE BUILD WITH YOU.</h2>
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-2 gap-6">
@@ -349,14 +349,14 @@ function App() {
               }
             ].map((service, idx) => (
               <StaggerItem key={idx}>
-                <div className="bg-alroq-card border border-alroq-border p-8 lg:p-12 h-full hover:border-alroq-gold/30 transition-colors">
-                  <div className="font-mono text-sm text-alroq-gold mb-6">{service.num}</div>
-                  <h3 className="font-mono text-sm tracking-widest text-alroq-white uppercase mb-4">{service.title}</h3>
-                  <p className="font-sans text-sm text-alroq-muted leading-relaxed mb-8">{service.desc}</p>
+                <div className="bg-[#181818] border border-[#222222] p-8 lg:p-12 h-full hover:border-[#C9A84C]/30 transition-colors">
+                  <div className="font-mono text-sm text-[#C9A84C] mb-6">{service.num}</div>
+                  <h3 className="font-mono text-sm tracking-widest text-[#F5F3EE] uppercase mb-4">{service.title}</h3>
+                  <p className="font-sans text-sm text-[#888888] leading-relaxed mb-8">{service.desc}</p>
                   <ul className="space-y-3">
                     {service.bullets.map((bullet, i) => (
-                      <li key={i} className="flex items-start gap-3 text-alroq-secondary font-sans text-xs">
-                        <span className="text-alroq-gold mt-1">-</span>
+                      <li key={i} className="flex items-start gap-3 text-[#666666] font-sans text-xs">
+                        <span className="text-[#C9A84C] mt-1">-</span>
                         {bullet}
                       </li>
                     ))}
@@ -366,14 +366,14 @@ function App() {
             ))}
 
             <StaggerItem className="md:col-span-2">
-              <div className="bg-alroq-card border border-alroq-border p-8 lg:p-12 hover:border-alroq-gold/30 transition-colors">
-                <div className="font-mono text-sm text-alroq-gold mb-6">05</div>
-                <h3 className="font-mono text-sm tracking-widest text-alroq-white uppercase mb-4">DIGITAL MARKETING & SOCIAL MEDIA MANAGEMENT</h3>
-                <p className="font-sans text-sm text-alroq-muted leading-relaxed mb-8 max-w-3xl">Full-service digital marketing — SEO, paid ads, social media management, content creation, email campaigns, and monthly performance reporting.</p>
+              <div className="bg-[#181818] border border-[#222222] p-8 lg:p-12 hover:border-[#C9A84C]/30 transition-colors">
+                <div className="font-mono text-sm text-[#C9A84C] mb-6">05</div>
+                <h3 className="font-mono text-sm tracking-widest text-[#F5F3EE] uppercase mb-4">DIGITAL MARKETING & SOCIAL MEDIA MANAGEMENT</h3>
+                <p className="font-sans text-sm text-[#888888] leading-relaxed mb-8 max-w-3xl">Full-service digital marketing — SEO, paid ads, social media management, content creation, email campaigns, and monthly performance reporting.</p>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {["SEO — on-page, local SEO", "Google & Meta Ads", "Social media management", "Content creation & copy", "Email & WhatsApp marketing", "Monthly performance report"].map((bullet, i) => (
-                    <div key={i} className="flex items-start gap-3 text-alroq-secondary font-sans text-xs">
-                      <span className="text-alroq-gold mt-1">-</span>
+                    <div key={i} className="flex items-start gap-3 text-[#666666] font-sans text-xs">
+                      <span className="text-[#C9A84C] mt-1">-</span>
                       {bullet}
                     </div>
                   ))}
@@ -385,10 +385,10 @@ function App() {
       </section>
 
       {/* Customer Journey (Slide 05) */}
-      <section className="py-32 bg-[#050505] relative z-10 border-t border-alroq-border">
+      <section className="py-32 bg-[#050505] relative z-10 border-t border-[#222222]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <FadeIn>
-            <h2 className="font-bebas text-5xl md:text-7xl text-alroq-white mb-20 text-center">HOW WE WORK WITH YOU.</h2>
+            <h2 className="font-bebas text-5xl md:text-7xl text-[#F5F3EE] mb-20 text-center">HOW WE WORK WITH YOU.</h2>
           </FadeIn>
 
           <div className="space-y-12">
@@ -428,17 +428,17 @@ function App() {
             ].map((row, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-start">
-                  <div className="w-full lg:w-48 flex-shrink-0 border-l-2 border-alroq-gold pl-4 py-2">
-                    <h4 className="font-mono text-sm tracking-widest text-alroq-white uppercase">{row.phase}</h4>
+                  <div className="w-full lg:w-48 flex-shrink-0 border-l-2 border-[#C9A84C] pl-4 py-2">
+                    <h4 className="font-mono text-sm tracking-widest text-[#F5F3EE] uppercase">{row.phase}</h4>
                   </div>
                   <div className="grid sm:grid-cols-3 gap-6 w-full">
                     {row.steps.map((step, i) => (
-                      <div key={i} className="bg-alroq-card border border-alroq-border p-6">
-                        <div className="font-mono text-[10px] text-alroq-gold uppercase tracking-widest mb-3 flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-alroq-gold rotate-45"></div>
+                      <div key={i} className="bg-[#181818] border border-[#222222] p-6">
+                        <div className="font-mono text-[10px] text-[#C9A84C] uppercase tracking-widest mb-3 flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 bg-[#C9A84C] rotate-45"></div>
                           {step.title}
                         </div>
-                        <p className="font-sans text-xs text-alroq-muted leading-relaxed">{step.desc}</p>
+                        <p className="font-sans text-xs text-[#888888] leading-relaxed">{step.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -448,7 +448,7 @@ function App() {
           </div>
 
           <FadeIn delay={0.4} className="mt-20">
-            <p className="font-mono text-sm text-alroq-gold text-center tracking-widest uppercase border-y border-alroq-border py-8">
+            <p className="font-mono text-sm text-[#C9A84C] text-center tracking-widest uppercase border-y border-[#222222] py-8">
               From the moment you browse ALROQ to the day your software goes live — we are with you at every step.
             </p>
           </FadeIn>
@@ -456,7 +456,7 @@ function App() {
       </section>
 
       {/* CTA / Footer (Slide 06) */}
-      <section id="contact" className="py-40 relative z-10 bg-[#0A0A0A] flex flex-col items-center justify-center border-t border-alroq-border text-center overflow-hidden">
+      <section id="contact" className="py-40 relative z-10 bg-[#0A0A0A] flex flex-col items-center justify-center border-t border-[#222222] text-center overflow-hidden">
         {/* Subtle background rings */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none">
           {[1000, 800, 600, 400].map((size, i) => (
@@ -466,24 +466,24 @@ function App() {
 
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <FadeIn>
-            <h2 className="font-bebas text-8xl md:text-[120px] text-alroq-white tracking-widest mb-8">ALROQ</h2>
-            <div className="w-24 h-[2px] bg-alroq-gold mx-auto mb-8"></div>
-            <p className="font-bebas text-3xl md:text-4xl text-alroq-gold mb-20 tracking-wider">TAILORED TECHNOLOGY, DELIVERED FAST</p>
+            <h2 className="font-bebas text-8xl md:text-[120px] text-[#F5F3EE] tracking-widest mb-8">ALROQ</h2>
+            <div className="w-24 h-[2px] bg-[#C9A84C] mx-auto mb-8"></div>
+            <p className="font-bebas text-3xl md:text-4xl text-[#C9A84C] mb-20 tracking-wider">TAILORED TECHNOLOGY, DELIVERED FAST</p>
           </FadeIn>
 
           <StaggerContainer className="flex flex-col items-center gap-6 mb-20">
             <StaggerItem>
-              <a href="tel:0137977986" className="flex items-center gap-4 text-alroq-white hover:text-alroq-gold transition-colors font-mono text-sm tracking-widest">
+              <a href="tel:0137977986" className="flex items-center gap-4 text-[#F5F3EE] hover:text-[#C9A84C] transition-colors font-mono text-sm tracking-widest">
                 <Phone className="w-5 h-5" /> 013-7977986
               </a>
             </StaggerItem>
             <StaggerItem>
-              <a href="mailto:info@al-roq.com" className="flex items-center gap-4 text-alroq-white hover:text-alroq-gold transition-colors font-mono text-sm tracking-widest">
+              <a href="mailto:info@al-roq.com" className="flex items-center gap-4 text-[#F5F3EE] hover:text-[#C9A84C] transition-colors font-mono text-sm tracking-widest">
                 <Mail className="w-5 h-5" /> info@al-roq.com
               </a>
             </StaggerItem>
             <StaggerItem>
-              <a href="https://www.al-roq.com" className="flex items-center gap-4 text-alroq-white hover:text-alroq-gold transition-colors font-mono text-sm tracking-widest">
+              <a href="https://www.al-roq.com" className="flex items-center gap-4 text-[#F5F3EE] hover:text-[#C9A84C] transition-colors font-mono text-sm tracking-widest">
                 <Globe className="w-5 h-5" /> www.al-roq.com
               </a>
             </StaggerItem>
@@ -492,7 +492,7 @@ function App() {
           <FadeIn delay={0.4}>
             <div className="flex flex-wrap justify-center gap-4 mb-32">
               {['FACEBOOK', 'INSTAGRAM', 'LINKEDIN', 'TIKTOK'].map((social) => (
-                <a key={social} href="#" className="font-mono text-xs tracking-widest text-alroq-muted border border-alroq-border px-6 py-3 hover:bg-alroq-border hover:text-alroq-white transition-all bg-[#111111]">
+                <a key={social} href="#" className="font-mono text-xs tracking-widest text-[#888888] border border-[#222222] px-6 py-3 hover:bg-alroq-border hover:text-[#F5F3EE] transition-all bg-[#111111]">
                   {social}
                 </a>
               ))}
@@ -500,7 +500,7 @@ function App() {
           </FadeIn>
 
           <FadeIn delay={0.6}>
-            <p className="font-mono text-[10px] text-alroq-secondary tracking-widest uppercase">
+            <p className="font-mono text-[10px] text-[#666666] tracking-widest uppercase">
               AL ROQ SDN BHD · 202401046612 (1592458-P)
             </p>
           </FadeIn>
