@@ -1,0 +1,665 @@
+DESIGNER BRIEF — CAROUSEL CONTENT COPY
+
+ALROQ SDN BHD
+
+202401046612 (1592458-P)
+
+6 SLIDES · INSTAGRAM / LINKEDIN CAROUSEL · 1080 × 1350 PX
+
+AESTHETIC: PALANTIR-STYLE DARK ENTERPRISE · GOLD #C9A84C · BLACK #0A0A0A
+
+FONTS: BEBAS NEUE (HEADERS) · SPACE MONO (LABELS) · DM SANS (BODY)
+
+All copy below is final. Designer should reproduce layout in Figma or
+Adobe Illustrator using the visual hierarchy, colour, and typographic
+system described per slide. Each slide section begins with [SLIDE N /
+06] and includes exact copy, labels, tags, and layout notes.
+
+[ SLIDE 01 / 06 ]
+
+ALROQ. WHO WE ARE.
+
+[ LAYOUT NOTE: HERO TOP PANEL ~45% HEIGHT, BOTTOM COPY SECTION ~55% ]
+
+— EYEBROW LABEL (SMALL MONO, GOLD, TOP LEFT)
+
+ALROQ — THE SOFTWARE FACTORY
+
+— LOGO PLACEMENT
+
+ALROQ wordmark — white, top left of hero panel. Use version on dark
+background.
+
+— HERO HEADLINE (BEBAS NEUE, LARGE)
+
+YOUR ONE-STOP
+
+DIGITAL BACKBONE
+
+FOR EVERY BUSINESS.
+
+— BODY COPY (DM SANS, MUTED)
+
+We build ready-to-deploy software products that solve real business
+problems — fast, affordable, and tailored to your operations. From F&B
+to healthcare, education to enterprise: if your business runs on it, we
+have already built it.
+
+— STAT BLOCKS (4 COLUMNS, GOLD NUMBERS)
+
++-----------------+-----------------+-----------------+-----------------+
+| 12+             | 10+             | 50+             | 100+            |
+|                 |                 |                 |                 |
+| INDUSTRIES      | PRODUCTS        | MODULES         | COMPANIES       |
++=================+=================+=================+=================+
++-----------------+-----------------+-----------------+-----------------+
+
+— INDUSTRIES WE SERVE (TAGS / CHIPS, 12+ ITEMS)
+
+F&B · EDUCATION · HEALTHCARE · RETAIL · MANUFACTURING · LOGISTICS
+
+PROPERTY · EVENTS · CONSTRUCTION · SERVICES · TRADING · HOSPITALITY
+
+GOVERNMENT · FINANCIAL SERVICES · NGO
+
+— DEPLOYED PRODUCTS LIST (10+ ITEMS)
+
++--------------------------------+-------------------------------------+
+| -   Servion — Business ERP     | -   Vendo — F&B Software            |
++================================+=====================================+
+| -   Yarpy — Institution OS     | -   Hulace — Event Platform and     |
+|                                |       Matchmaking                   |
++--------------------------------+-------------------------------------+
+| -   Skilio — Learning Software | -   Kaunter — Healthcare Operation  |
+|                                |       Software                      |
++--------------------------------+-------------------------------------+
+| -   ALROQ Property Software    | -   ALROQ Automotive Software       |
++--------------------------------+-------------------------------------+
+| -   ALROQ Legal & Compliance   | -   ALROQ Inventory & Warehouse     |
+|       Software                 |       Software                      |
++--------------------------------+-------------------------------------+
+| -   ALROQ POS Software         | -   ALROQ Marketplace & E-Commerce  |
++--------------------------------+-------------------------------------+
+
+— BOTTOM TAG LINE (MONO, GOLD, SMALL)
+
+TAGLINE: TAILORED TECHNOLOGY, DELIVERED FAST
+
+CONTACT: 013-7977986 · info@al-roq.com · www.al-roq.com
+
+SLIDE NUMBER: 01 / 06 (bottom right, mono, very small, dark grey)
+
+[ SLIDE 02 / 06 ]
+
+SIX PRODUCTS. EVERY INDUSTRY.
+
+[ LAYOUT NOTE: 2×3 GRID. EACH CARD MUST BE FULLY FILLED — NO EMPTY
+SPACE. GOLD LEFT BORDER ACCENT ON EACH CARD. ALL TAGS AND FEATURES MUST
+BE VISIBLE. REDUCE FONT SIZE BEFORE LEAVING ANYTHING OUT. ]
+
+SERVION — All-In-One Business ERP
+
+INDUSTRIES: RETAIL · TRADING · LOGISTICS · MANUFACTURING · SERVICES ·
+PROPERTY · CONSTRUCTION · WHOLESALE · DISTRIBUTION
+
+FEATURES:
+
+-   Multi-branch & multi-outlet management
+
+-   CRM — leads, pipeline, customer history
+
+-   HR & payroll — staff, attendance, leave, claims
+
+-   Full accounting — P&L, balance sheet, tax
+
+-   Inventory management — stock in/out, reorder alerts
+
+-   Purchase & procurement with approval workflows
+
+-   Sales order & quotation management
+
+-   Project management — task, timeline, resources
+
+-   POS integration — retail counter support
+
+-   Reports & analytics dashboard
+
+-   Role-based access control
+
+-   Mobile app for field staff
+
+YARPY — Institution Management System
+
+INDUSTRIES: KINDERGARDEN · PRESCHOOL · GOVERNMENT SCHOOL · PRIVATE
+SCHOOL · UNIVERSITY · COLLEGE · TUITION CENTRE · ACADEMY · VOCATIONAL
+
+FEATURES:
+
+-   Student registration & profile management
+
+-   Fee collection, invoicing & payment tracking
+
+-   Attendance — student and staff
+
+-   Class & timetable scheduling
+
+-   Parent portal — real-time updates & notifications
+
+-   Academic results & report cards
+
+-   Teacher & staff management
+
+-   Library management module
+
+-   Student bus & transport tracking
+
+-   Hostel & dormitory management
+
+-   Examination & grading system
+
+-   Communication — announcements, circular, SMS/email blast
+
+-   MOE-compliant reporting
+
+-   Multi-campus support
+
+SKILIO — Learning Management System
+
+INDUSTRIES: CORPORATES · TRAINING PROVIDERS · FREELANCE TRAINERS · NGOS
+· GOVERNMENT AGENCIES · PROFESSIONAL BODIES
+
+FEATURES:
+
+-   Course builder — text, video, quiz, assignment
+
+-   Live class scheduling & video conferencing integration
+
+-   Enrolment & cohort management
+
+-   Certification & digital badge issuance
+
+-   Trainer & learner dashboards
+
+-   Progress tracking & completion analytics
+
+-   Drip content & prerequisite gating
+
+-   Assessment & examination module
+
+-   In-app discussion & community feed
+
+-   Revenue management — paid courses, subscriptions
+
+-   White-label branding for organisations
+
+-   Multi-language interface support
+
+VENDO — F&B All-In-One Platform
+
+INDUSTRIES: RESTAURANT · CAFÉ · CLOUD KITCHEN · FRANCHISE CHAIN · FOOD
+COURT · CATERING · BAKERY · HAWKER STALL · BUFFET
+
+FEATURES:
+
+-   POS — dine-in, takeaway, delivery
+
+-   Kitchen Display System (KDS)
+
+-   Table management & QR self-order
+
+-   Online ordering — own platform + GrabFood / Foodpanda sync
+
+-   Inventory & ingredient tracking
+
+-   Recipe & cost management
+
+-   Multi-outlet dashboard
+
+-   Staff scheduling & shift management
+
+-   Loyalty points & voucher system
+
+-   Daily & monthly sales reports
+
+-   Offline mode — works without internet
+
+-   Supplier & purchase order management
+
+-   Split billing & multiple payment methods
+
+-   Waste tracking & food cost control
+
+HULACE — Event Connection Platform
+
+INDUSTRIES: NETWORKING EVENTS · CONFERENCES · TRADE FAIRS · COMMUNITY
+GROUPS · CORPORATE EVENTS · WEDDINGS · MEETUPS
+
+FEATURES:
+
+-   Event discovery — browse & search by category
+
+-   Event creation — public, private, ticketed
+
+-   RSVP & attendee management
+
+-   Smart attendee matching & networking
+
+-   In-app messaging & connection requests
+
+-   QR check-in & digital passes
+
+-   Organiser dashboard — analytics & attendance
+
+-   Sponsor & exhibitor profiles
+
+-   Post-event feedback & rating
+
+-   Push notifications & event reminders
+
+-   Community group creation & management
+
+KAUNTER — Healthcare Operating System
+
+INDUSTRIES: PHARMACY · KLINIK KESIHATAN · PRIVATE CLINIC · SPECIALIST
+CLINIC · HOSPITAL · DENTAL CLINIC · VETERINARY CLINIC
+
+FEATURES:
+
+-   Patient registration & EMR (electronic medical records)
+
+-   Queue management — physical & digital number calling
+
+-   Doctor consultation & diagnosis notes
+
+-   Prescription management & drug dispensing
+
+-   Drug inventory — stock level, expiry alerts
+
+-   Billing, invoicing & payment processing
+
+-   Panel company & insurance claims
+
+-   MySejahtera / MOH reporting compliance
+
+-   Appointment booking — walk-in & online
+
+-   Lab result management
+
+-   Referral letter generation
+
+-   Multi-clinic management dashboard
+
+-   MC (Medical Certificate) issuance
+
+-   Staff & doctor scheduling
+
+[ SLIDE 03 / 06 ]
+
+YOUR SOFTWARE. IN DAYS. NOT MONTHS.
+
+[ LAYOUT NOTE: DARK GRID BACKGROUND. TOP STAT ROW. MIDDLE FLOW STEPS.
+BOTTOM — OLD WAY VS ALROQ WAY COMPARISON. END WITH GOLD PROMISE BOX. ]
+
+— STAT BLOCKS (4 COLUMNS)
+
++-----------------+-----------------+-----------------+-----------------+
+| 72H             | 100%            | ∞               | DAYS            |
+|                 |                 |                 |                 |
+| FIRST BUILD     | YOUR FLOW       | SCALABLE        | NOT MONTHS      |
+| LIVE            |                 |                 |                 |
++=================+=================+=================+=================+
++-----------------+-----------------+-----------------+-----------------+
+
+— 4-STEP PROCESS FLOW (HORIZONTAL, CONNECTED BY ARROWS)
+
+  -----------------------------------------------------------------------
+  01                                  02
+  ----------------------------------- -----------------------------------
+  BROWSE & PICK                       TELL US WHAT'S MISSING
+
+  Explore ALROQ's ecosystem. Identify Share your workflow, missing
+  the product closest to your need.   features, and custom requirements.
+
+  03                                  04
+
+  WE BUILD YOUR VERSION               GO LIVE. DONE.
+
+  We add your desired flow and        Deploy. Train. Scale. No waiting.
+  features on top of the base         No broken promises.
+  product.
+  -----------------------------------------------------------------------
+
+— COMPARISON: OLD WAY vs ALROQ WAY (2 COLUMNS)
+
+  -----------------------------------------------------------------------
+  THE OLD WAY                       THE ALROQ WAY
+  --------------------------------- -------------------------------------
+  6–18 month dev cycles             Base system ready in 72 hours
+
+  Built from scratch every time     Start with a proven product base
+
+  Scope creep & missed deadlines    Fixed scope, your features added
+
+  One-size-fits-all solutions       100% tailored to your workflow
+
+  Agencies that disappear after     Ongoing support and updates
+  launch
+  -----------------------------------------------------------------------
+
+— GOLD PROMISE BOX (HIGHLIGHTED SECTION, GOLD BORDER)
+
+Pick our software. Tell us what's missing. Add your desired flow and
+features. Your budget, your flow. Everyone deserves to get their own
+software.
+
+[ SLIDE 04 / 06 ]
+
+BEYOND PRODUCTS. WE BUILD WITH YOU.
+
+[ LAYOUT NOTE: DOT GRID BACKGROUND. 2×2 GRID + 1 WIDE CARD AT BOTTOM.
+EACH CARD HAS MONO NUMBER, ICON SPACE, TITLE, DESC, AND INDENTED
+SUB-SERVICE BULLETS. ]
+
+01 WEBSITE DEVELOPMENT
+
+Professional websites built for speed, search, and conversion.
+Custom-designed for your brand and optimised for every device.
+
+-   Landing pages & company profiles
+
+-   E-commerce storefronts (Shopify / custom)
+
+-   Portfolio & creative websites
+
+-   Government & institutional portals
+
+-   Multi-language website support
+
+-   SEO-ready architecture & on-page optimisation
+
+-   CMS integration — easy content updates
+
+-   Web hosting & domain management
+
+-   Google Analytics & conversion tracking setup
+
+-   Website maintenance & monthly support plans
+
+02 CUSTOM WEB & MOBILE APP DEVELOPMENT
+
+End-to-end development of web and mobile applications tailored to your
+workflows. From MVP to full enterprise build — designed, developed, and
+delivered.
+
+-   Web application development (React, Next.js, Laravel)
+
+-   iOS & Android mobile apps (Flutter / React Native)
+
+-   API development & third-party integrations
+
+-   Database architecture & cloud infrastructure
+
+-   UI/UX design — wireframes to final prototype
+
+-   MVP development — launch fast, iterate faster
+
+-   Legacy system migration & modernisation
+
+-   SaaS platform development
+
+-   Payment gateway integration (FPX, Stripe, GrabPay, etc.)
+
+-   Quality assurance & user acceptance testing (UAT)
+
+-   Post-launch maintenance & feature expansion
+
+03 TRAINING & TUTORING
+
+One-on-one and group training for teams learning new platforms, tools,
+or digital skills. Practical, hands-on, and outcome-focused.
+
+-   Onboarding training for ALROQ products (Servion, Vendo, Yarpy, etc.)
+
+-   Custom software training for any platform
+
+-   Digital literacy workshops for non-tech teams
+
+-   Microsoft Office & Google Workspace training
+
+-   Social media & content creation basics
+
+-   1-on-1 mentoring for business owners going digital
+
+-   Group workshops — in-person & remote (Zoom/Teams)
+
+-   Training materials & manuals provided
+
+-   Post-training support for 30 days
+
+04 RECRUITMENT & TALENT SOLUTIONS
+
+End-to-end hiring support — from job scoping and candidate sourcing to
+interviews and onboarding. For technical, operational, and executive
+roles.
+
+-   Job description scoping & role design
+
+-   Candidate sourcing — LinkedIn, job boards, network
+
+-   Resume screening & shortlisting
+
+-   Technical interview coordination
+
+-   Background checks & reference verification
+
+-   Offer management & negotiation support
+
+-   Onboarding assistance & documentation
+
+-   Contract & freelance talent placement
+
+-   Tech roles: developers, designers, PMs, QA
+
+-   Non-tech roles: ops, sales, admin, executives
+
+-   Retainer-based recruitment partnerships available
+
+05 DIGITAL MARKETING & SOCIAL MEDIA MANAGEMENT
+
+Full-service digital marketing — SEO, paid ads, social media management,
+content creation, email campaigns, and monthly performance reporting.
+
+-   SEO — on-page, off-page, technical, local SEO
+
+-   Google Ads — Search, Display, Shopping, YouTube
+
+-   Meta Ads — Facebook & Instagram campaign management
+
+-   TikTok Ads & organic TikTok content strategy
+
+-   LinkedIn marketing for B2B businesses
+
+-   Social media management — FB, IG, LinkedIn, TikTok
+
+-   Content creation — copywriting, graphics, short-form video
+
+-   Email marketing — Mailchimp / custom campaigns
+
+-   WhatsApp broadcast & marketing automation
+
+-   Influencer marketing coordination
+
+-   Monthly performance report & strategy review
+
+-   Brand identity & visual guideline development
+
+-   Google My Business setup & optimisation
+
+-   Remarketing & retargeting campaigns
+
+[ SLIDE 05 / 06 ]
+
+HOW WE WORK WITH YOU.
+
+[ LAYOUT NOTE: GRID BACKGROUND. 4 HORIZONTAL PHASE ROWS. EACH ROW HAS
+PHASE LABEL (LEFT, GOLD BORDER) AND 3 STEP CARDS TO THE RIGHT. ARROWS OR
+CONNECTORS BETWEEN ROWS. COMPACT, DATA-DENSE. ]
+
+— CUSTOMER JOURNEY MAP — 4 PHASES, 3 STEPS EACH
+
++----------+-------------------+-------------------+-------------------+
+| BROWSE   | ◆ Explore the     | ◆ Identify Your   | ◆ Discover        |
+|          | Ecosystem         | Fit               | Features          |
+|          |                   |                   |                   |
+|          | Visit al-roq.com  | Find the product  | Review modules,   |
+|          | or social media.  | closest to your   | feature lists,    |
+|          | Browse all 6      | business needs.   | and industry tags |
+|          | products and      | Self-qualify your | per product.      |
+|          | services.         | industry.         |                   |
++==========+===================+===================+===================+
++----------+-------------------+-------------------+-------------------+
+
+▼ NEXT PHASE
+
++----------+-------------------+-------------------+-------------------+
+| CONSULT  | ◆ Reach Out       | ◆ Discovery Call  | ◆ Proposal &      |
+|          |                   |                   | Quote             |
+|          | Contact via       | ALROQ team learns |                   |
+|          | WhatsApp, email,  | your operations,  | Receive a clear,  |
+|          | or website form.  | pain points, and  | fixed-price       |
+|          | Response within   | current tools.    | quotation. No     |
+|          | 24 hours.         |                   | surprises. No     |
+|          |                   |                   | hidden charges.   |
++==========+===================+===================+===================+
++----------+-------------------+-------------------+-------------------+
+
+▼ NEXT PHASE
+
++----------+-------------------+-------------------+-------------------+
+| BUILD    | ◆ Base System     | ◆ Custom Features | ◆ Review & Refine |
+|          | Ready             | Added             |                   |
+|          |                   |                   | You test. You     |
+|          | Your chosen       | Your specific     | give feedback. We |
+|          | product is        | workflows,        | fix and refine    |
+|          | configured and    | fields, and       | until it is       |
+|          | handed to you     | features are      | right.            |
+|          | within 72 hours.  | built on top.     |                   |
++==========+===================+===================+===================+
++----------+-------------------+-------------------+-------------------+
+
+▼ NEXT PHASE
+
++----------+-------------------+-------------------+-------------------+
+| LAUNCH   | ◆ Go Live         | ◆ Team Training   | ◆ Support & Scale |
+|          |                   |                   |                   |
+|          | Full deployment   | ALROQ trains your | Ongoing technical |
+|          | to your           | staff. Manuals    | support. Add new  |
+|          | environment —     | and guides        | features as your  |
+|          | cloud,            | provided.         | business grows.   |
+|          | on-premise, or    |                   |                   |
+|          | hybrid.           |                   |                   |
++==========+===================+===================+===================+
++----------+-------------------+-------------------+-------------------+
+
+— BOTTOM PROMISE (MONO, GOLD ACCENT)
+
+From the moment you browse ALROQ to the day your software goes live — we
+are with you at every step.
+
+[ SLIDE 06 / 06 ]
+
+ALROQ. LET'S BUILD.
+
+[ LAYOUT NOTE: CENTRED LAYOUT. CONCENTRIC CIRCLE GEOMETRY IN BACKGROUND
+(VERY SUBTLE). LARGE ALROQ WORDMARK CENTRED. GOLD RULE. TAGLINE. CONTACT
+ROWS. SOCIAL PILLS. COMPANY REG AT BOTTOM. ]
+
+— LOGO (LARGE, CENTRED)
+
+ALROQ
+
+────────────────────────
+
+— TAGLINE (BEBAS NEUE OR BOLD CAPS, GOLD)
+
+TAILORED TECHNOLOGY, DELIVERED FAST
+
+— CONTACT INFORMATION (3 ROWS, ICON + MONO TEXT)
+
+  -----------------------------------------------------------------------
+  ☎      013-7977986
+  ------ ----------------------------------------------------------------
+  ✉      info@al-roq.com
+
+  ⊕      www.al-roq.com
+  -----------------------------------------------------------------------
+
+— SOCIAL PILLS (MONO TEXT, DARK BORDER BOXES)
+
+[ FACEBOOK ] [ INSTAGRAM ] [ LINKEDIN ] [ TIKTOK ]
+
+— FOOTER / COMPANY REGISTRATION (VERY SMALL, DARK GREY, BOTTOM CENTRE)
+
+AL ROQ SDN BHD · 202401046612 (1592458-P)
+
+[ APPENDIX — DESIGN SYSTEM REFERENCE ]
+
+COLOUR PALETTE
+
+  -----------------------------------------------------------------------
+  PRIMARY GOLD                      #C9A84C
+  --------------------------------- -------------------------------------
+  BACKGROUND BLACK                  #0A0A0A
+
+  CARD SURFACE                      #181818
+
+  BORDER DARK                       #222222
+
+  BODY TEXT MUTED                   #888888
+
+  SECONDARY TEXT                    #666666
+
+  HEADLINE WHITE                    #F5F3EE
+  -----------------------------------------------------------------------
+
+TYPOGRAPHY
+
+  -----------------------------------------------------------------------
+  SLIDE HEADLINES                   Bebas Neue — 60–80px, White or Gold
+  --------------------------------- -------------------------------------
+  SECTION LABELS                    Space Mono — 10–12px, Gold,
+                                    Uppercase, Tracked
+
+  BODY COPY                         DM Sans — 13–14px, Muted Grey #888888
+
+  NUMBERS / STATS                   Bebas Neue or Arial Bold — 48–80px,
+                                    Gold
+
+  TAGS / CHIPS                      Space Mono — 9–10px, #666666, border
+                                    #2A2A2A
+  -----------------------------------------------------------------------
+
+LAYOUT & GEOMETRY
+
+-   Canvas size: 1080 × 1350 px (4:5 portrait ratio)
+
+-   Background: #0A0A0A — use grid texture (40px grid, gold at 4%
+      opacity) or dot pattern
+
+-   Hero panel (Slide 1): top 45% of slide, slightly lighter black
+      (#0D0D0D), concentric circles decoration top-right
+
+-   Cards: background #181818, 1px border #222222, gold 2px left border
+      accent
+
+-   Stat boxes: background #111111, 1px border #222222, centred layout
+
+-   Gold bar / rule: 40×2px, #C9A84C, placed below main headline
+
+-   Slide number: bottom right, Space Mono 9px, #333333
+
+-   All text left-aligned except Slide 6 (centred)
+
+-   No gradients. No glows. No drop shadows. Flat dark surfaces only.
+
+-   Consistent 22–28px padding from slide edges on all sides
