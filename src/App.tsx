@@ -1,226 +1,304 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Check, Phone, Mail, Globe } from 'lucide-react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { ArrowRight, Check, Plus, ChevronRight, XCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-// Animate UI Components
-import { FadeIn } from './components/ui/animate-ui/fade-in';
-import { StaggerContainer, StaggerItem } from './components/ui/animate-ui/stagger-container';
+// Data
+const products = [
+  {
+    title: "SERVION",
+    subtitle: "Business ERP",
+    industries: "RETAIL · LOGISTICS · MANUFACTURING · CONSTRUCTION",
+    features: ["Multi-branch & multi-outlet", "CRM & Pipeline", "HR & Payroll", "Full Accounting", "Inventory Management", "Purchase & Procurement", "POS Integration"],
+    desc: "The central operating system for your enterprise. Integrate accounting, CRM, HR, inventory, and analytics into a single, cohesive ontology."
+  },
+  {
+    title: "YARPY",
+    subtitle: "Institution OS",
+    industries: "SCHOOLS · UNIVERSITIES · ACADEMIES",
+    features: ["Student Registration", "Fee Collection", "Attendance Tracking", "Class Scheduling", "Parent Portal", "Academic Results", "Teacher Management"],
+    desc: "Built for educational institutions to manage students, fees, attendance, and grading in one secure platform."
+  },
+  {
+    title: "SKILIO",
+    subtitle: "Learning Management",
+    industries: "CORPORATES · TRAINERS · NGOS",
+    features: ["Course Builder", "Live Class Scheduling", "Certification Issuance", "Learner Dashboards", "Progress Tracking", "Assessment Module", "White-label Branding"],
+    desc: "Deploy customized learning platforms for corporates and training providers with full assessment and tracking."
+  },
+  {
+    title: "VENDO",
+    subtitle: "F&B Platform",
+    industries: "RESTAURANT · CAFÉ · FRANCHISE",
+    features: ["POS (Dine-in, Takeaway)", "Kitchen Display System", "Table Management", "Online Ordering Sync", "Inventory Tracking", "Recipe Costing", "Loyalty Points"],
+    desc: "The ultimate F&B management system. Handle orders, kitchen displays, and complex inventory routing in real-time."
+  },
+  {
+    title: "HULACE",
+    subtitle: "Event Connection",
+    industries: "NETWORKING · CONFERENCES · TRADE FAIRS",
+    features: ["Event Discovery", "Ticketed RSVP", "Smart Networking", "QR Check-in", "Organiser Dashboard", "Sponsor Profiles", "Push Notifications"],
+    desc: "Powering events of all scales with intelligent matchmaking, ticketing, and real-time attendee analytics."
+  },
+  {
+    title: "KAUNTER",
+    subtitle: "Healthcare OS",
+    industries: "PHARMACY · CLINICS · HOSPITALS",
+    features: ["Patient Registration (EMR)", "Queue Management", "Doctor Consultation Notes", "Prescription Management", "Drug Inventory Alerts", "Panel Insurance Claims", "Appointment Booking"],
+    desc: "A mission-critical operating system for healthcare providers, integrating EMR, queueing, and inventory."
+  }
+];
 
-function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+const services = [
+  {
+    num: "01",
+    title: "WEBSITE DEVELOPMENT",
+    bullets: ["Landing pages & profiles", "E-commerce storefronts", "SEO-ready architecture", "CMS integration"]
+  },
+  {
+    num: "02",
+    title: "CUSTOM APP DEV",
+    bullets: ["Web apps (React, Laravel)", "iOS & Android", "API integrations", "Legacy migration"]
+  },
+  {
+    num: "03",
+    title: "TRAINING & TUTORING",
+    bullets: ["ALROQ onboarding", "Digital literacy", "1-on-1 mentoring", "Post-training support"]
+  },
+  {
+    num: "04",
+    title: "TALENT RECRUITMENT",
+    bullets: ["Candidate sourcing", "Interview coordination", "Tech & non-tech roles", "Retainer partnerships"]
+  },
+  {
+    num: "05",
+    title: "DIGITAL MARKETING",
+    bullets: ["SEO & Local SEO", "Google & Meta Ads", "Social media management", "Content creation"]
+  }
+];
 
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
-  const opacity1 = useTransform(scrollY, [0, 300], [1, 0]);
+export default function App() {
+  const [activeModal, setActiveModal] = useState<any | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
+  // Lock body scroll when modal is open
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    if (activeModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [activeModal]);
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-[#888888] selection:bg-[#C9A84C]/30 selection:text-[#F5F3EE] font-sans antialiased overflow-x-hidden">
-      {/* Background ambient texture */}
+    <div className="min-h-screen bg-[#050505] text-[#888888] font-sans selection:bg-[#C9A84C]/30 selection:text-[#F5F3EE] overflow-x-hidden">
+
+      {/* Background Grid */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
          <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#C9A84C" strokeWidth="1" opacity="0.1"/>
+            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#333" strokeWidth="1"/>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
       </div>
 
-      {/* Navbar */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#0A0A0A]/90 backdrop-blur-md border-b border-[#222222] py-4' : 'bg-transparent py-6'}`}>
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="flex justify-between items-center">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="flex-shrink-0 flex items-center"
-            >
-              <span className="text-2xl font-bebas text-[#F5F3EE] tracking-widest">
-                ALROQ
-              </span>
-            </motion.div>
+      {/* Top Bar - Utilitarian */}
+      <header className="fixed top-0 w-full z-40 bg-[#050505]/90 backdrop-blur-md border-b border-[#222]">
+        <div className="px-6 py-4 flex justify-between items-center max-w-[1600px] mx-auto">
+          <div className="flex items-center gap-4">
+            <div className="w-2 h-2 bg-[#C9A84C] animate-pulse"></div>
+            <span className="font-bebas text-2xl text-[#F5F3EE] tracking-widest">ALROQ</span>
+          </div>
+          <div className="hidden md:flex gap-8 text-[10px] font-mono tracking-widest uppercase text-[#888888]">
+            <a href="#systems" className="hover:text-[#C9A84C] transition-colors">Systems</a>
+            <a href="#capabilities" className="hover:text-[#C9A84C] transition-colors">Capabilities</a>
+            <a href="#deployment" className="hover:text-[#C9A84C] transition-colors">Deployment</a>
+          </div>
+          <a href="https://wa.me/60137977986" className="border border-[#C9A84C] text-[#C9A84C] px-4 py-1.5 text-[10px] font-mono tracking-widest uppercase hover:bg-[#C9A84C] hover:text-black transition-colors">
+            Initiate Contact
+          </a>
+        </div>
+      </header>
 
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-10">
-              {['PRODUCTS', 'SERVICES', 'PROCESS', 'CONTACT'].map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} className="font-mono text-xs text-[#C9A84C] tracking-widest hover:text-[#F5F3EE] transition-colors uppercase">
-                  {item}
-                </a>
-              ))}
-              <a
-                href="https://wa.me/60137977986"
-                className="group relative px-6 py-2 border border-[#C9A84C] text-xs tracking-widest font-mono text-[#C9A84C] overflow-hidden uppercase hover:border-[#C9A84C] transition-colors"
-              >
-                <div className="absolute inset-0 bg-[#C9A84C] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-                <span className="relative z-10 group-hover:text-alroq-black transition-colors duration-300">LET'S BUILD</span>
-              </a>
+      <main className="relative z-10 pt-24 px-6 pb-20 max-w-[1600px] mx-auto flex flex-col gap-8">
+
+        {/* Top Bento Row: Hero + Stats */}
+        <div className="grid lg:grid-cols-3 gap-8 h-auto lg:h-[450px]">
+
+          {/* Main Hero Box */}
+          <div className="lg:col-span-2 border border-[#222] bg-[#0A0A0A] p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#C9A84C]/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div>
+              <div className="font-mono text-[10px] tracking-widest text-[#C9A84C] uppercase mb-6 flex items-center gap-2">
+                <span className="inline-block w-4 h-[1px] bg-[#C9A84C]"></span>
+                The Software Factory
+              </div>
+              <h1 className="font-bebas text-5xl md:text-7xl lg:text-[90px] leading-[0.85] text-[#F5F3EE] tracking-wide mb-6">
+                YOUR DIGITAL<br/>BACKBONE.
+              </h1>
+              <p className="font-sans text-sm md:text-base text-[#888888] max-w-xl leading-relaxed">
+                We build ready-to-deploy software products that solve real business problems — fast, affordable, and tailored to your operations. If your business runs on it, we have already built it.
+              </p>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-[#C9A84C]">
-                {isMenuOpen ? <X size={24} strokeWidth={1} /> : <Menu size={24} strokeWidth={1} />}
-              </button>
+            <div className="mt-12 flex gap-4">
+               <a href="#systems" className="inline-flex items-center gap-2 font-mono text-[10px] tracking-widest text-[#F5F3EE] uppercase hover:text-[#C9A84C] transition-colors border border-[#222] px-6 py-3 bg-[#111]">
+                 View Systems <ArrowRight className="w-3 h-3" />
+               </a>
             </div>
+          </div>
+
+          {/* Stats Box */}
+          <div className="border border-[#222] bg-[#0A0A0A] p-8 flex flex-col gap-6 justify-center">
+             {[
+               { val: "72H", label: "Deployment Speed" },
+               { val: "100%", label: "Customizable Flow" },
+               { val: "12+", label: "Industries Served" },
+               { val: "10+", label: "Core Products" }
+             ].map((stat, i) => (
+               <div key={i} className="flex justify-between items-end border-b border-[#222] pb-4 last:border-0 last:pb-0">
+                 <div className="font-mono text-[10px] tracking-widest text-[#888888] uppercase">{stat.label}</div>
+                 <div className="font-bebas text-4xl text-[#C9A84C]">{stat.val}</div>
+               </div>
+             ))}
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 w-full bg-[#0A0A0A] border-b border-[#222222] py-8 px-6"
-            >
-              <div className="flex flex-col space-y-6">
-                {['PRODUCTS', 'SERVICES', 'PROCESS', 'CONTACT'].map((item) => (
-                  <a key={item} href={`#${item.toLowerCase()}`} className="font-mono text-sm tracking-widest text-[#C9A84C] hover:text-[#F5F3EE] uppercase">
-                    {item}
-                  </a>
-                ))}
+        {/* Horizontal Track: Systems (Products) */}
+        <section id="systems" className="border border-[#222] bg-[#0A0A0A] p-8 overflow-hidden flex flex-col gap-6">
+          <div className="flex justify-between items-end">
+            <div>
+              <h2 className="font-bebas text-4xl text-[#F5F3EE] tracking-wide">CORE SYSTEMS</h2>
+              <p className="font-mono text-[10px] text-[#888888] tracking-widest uppercase mt-2">Horizontal scroll to view all nodes</p>
+            </div>
+            <div className="flex gap-2">
+               <button onClick={() => scrollRef.current?.scrollBy({ left: -300, behavior: 'smooth' })} className="border border-[#222] p-2 hover:bg-[#222] text-[#F5F3EE]"><ChevronRight className="w-4 h-4 rotate-180"/></button>
+               <button onClick={() => scrollRef.current?.scrollBy({ left: 300, behavior: 'smooth' })} className="border border-[#222] p-2 hover:bg-[#222] text-[#F5F3EE]"><ChevronRight className="w-4 h-4"/></button>
+            </div>
+          </div>
+
+          <div ref={scrollRef} className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            {products.map((prod, i) => (
+              <div key={i} onClick={() => setActiveModal({ type: 'product', data: prod })} className="min-w-[280px] md:min-w-[320px] border border-[#222] bg-[#111] p-6 flex flex-col gap-4 group cursor-pointer hover:border-[#C9A84C] transition-colors snap-start shrink-0">
+                <div className="flex justify-between items-start">
+                  <div className="font-mono text-[10px] text-[#C9A84C] tracking-widest uppercase border border-[#C9A84C]/30 px-2 py-1 bg-[#C9A84C]/5">SYS.0{i+1}</div>
+                  <Plus className="w-4 h-4 text-[#555] group-hover:text-[#C9A84C] transition-colors" />
+                </div>
+                <div>
+                  <h3 className="font-bebas text-3xl text-[#F5F3EE] mt-2">{prod.title}</h3>
+                  <div className="font-mono text-[10px] tracking-widest text-[#888888] uppercase">{prod.subtitle}</div>
+                </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
-
-      {/* Hero Section (Slide 01) */}
-      <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden z-10 bg-[#0D0D0D]">
-        {/* Concentric circles top right */}
-        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-10 pointer-events-none">
-          {[800, 600, 400, 200].map((size, i) => (
-            <div key={i} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#C9A84C]" style={{ width: size, height: size }}></div>
-          ))}
-        </div>
-
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 w-full">
-          <motion.div style={{ y: y1, opacity: opacity1 }} className="max-w-4xl">
-            <FadeIn delay={0.2} direction="up">
-              <span className="font-mono text-xs tracking-widest text-[#C9A84C] uppercase block mb-8">
-                ALROQ — THE SOFTWARE FACTORY
-              </span>
-            </FadeIn>
-
-            <FadeIn delay={0.4} direction="up">
-              <h1 className="font-bebas text-6xl md:text-8xl lg:text-[100px] leading-[0.9] text-[#F5F3EE] mb-8">
-                YOUR ONE-STOP<br/>
-                DIGITAL BACKBONE<br/>
-                <span className="text-[#C9A84C]">FOR EVERY BUSINESS.</span>
-              </h1>
-            </FadeIn>
-
-            <FadeIn delay={0.6} direction="up">
-              <p className="font-sans text-lg text-[#888888] mb-12 max-w-2xl leading-relaxed">
-                We build ready-to-deploy software products that solve real business problems — fast, affordable, and tailored to your operations. From F&B to healthcare, education to enterprise: if your business runs on it, we have already built it.
-              </p>
-            </FadeIn>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Stats Section (Slide 01 bottom) */}
-      <section className="py-20 border-y border-[#222222] bg-[#111111] relative z-10">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-6 text-center">
-            {[
-              { label: "INDUSTRIES", value: "12+" },
-              { label: "PRODUCTS", value: "10+" },
-              { label: "MODULES", value: "50+" },
-              { label: "COMPANIES", value: "100+" }
-            ].map((stat, idx) => (
-              <StaggerItem key={idx}>
-                <div className="font-bebas text-6xl md:text-7xl text-[#C9A84C] mb-4">{stat.value}</div>
-                <div className="font-mono text-xs tracking-[0.2em] text-[#888888] uppercase">{stat.label}</div>
-              </StaggerItem>
             ))}
-          </StaggerContainer>
+          </div>
+        </section>
 
-          <FadeIn delay={0.4} className="mt-20">
-            <div className="flex flex-wrap justify-center gap-3">
-              {['F&B', 'EDUCATION', 'HEALTHCARE', 'RETAIL', 'MANUFACTURING', 'LOGISTICS', 'PROPERTY', 'EVENTS', 'CONSTRUCTION', 'SERVICES', 'TRADING', 'HOSPITALITY', 'GOVERNMENT', 'FINANCIAL SERVICES', 'NGO'].map((tag) => (
-                <span key={tag} className="font-mono text-[10px] text-[#666666] border border-[#2A2A2A] px-4 py-2 rounded-sm uppercase tracking-widest bg-[#181818]">
-                  {tag}
-                </span>
+        {/* Lower Grid: Capabilities & Process */}
+        <div className="grid lg:grid-cols-2 gap-8">
+
+          {/* Capabilities */}
+          <section id="capabilities" className="border border-[#222] bg-[#0A0A0A] p-8">
+            <h2 className="font-bebas text-4xl text-[#F5F3EE] tracking-wide mb-8">CAPABILITIES</h2>
+            <div className="flex flex-col gap-4">
+              {services.map((svc, i) => (
+                <div key={i} onClick={() => setActiveModal({ type: 'service', data: svc })} className="border border-[#222] bg-[#111] p-4 flex justify-between items-center cursor-pointer hover:border-[#C9A84C] group transition-colors">
+                  <div className="flex items-center gap-4">
+                    <span className="font-mono text-xs text-[#C9A84C]">{svc.num}</span>
+                    <span className="font-mono text-xs text-[#F5F3EE] tracking-widest uppercase">{svc.title}</span>
+                  </div>
+                  <Plus className="w-4 h-4 text-[#555] group-hover:text-[#C9A84C]" />
+                </div>
               ))}
             </div>
-          </FadeIn>
+          </section>
+
+          {/* Deployment Process */}
+          <section id="deployment" className="border border-[#222] bg-[#0A0A0A] p-8 flex flex-col justify-between">
+            <div>
+              <h2 className="font-bebas text-4xl text-[#F5F3EE] tracking-wide mb-2">DEPLOYMENT PROTOCOL</h2>
+              <p className="font-sans text-sm text-[#888888] mb-8">From the moment you browse to the day your software goes live — we are with you at every step.</p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { phase: "01. BROWSE", desc: "Explore ecosystem & identify fit." },
+                { phase: "02. CONSULT", desc: "Discovery call & fixed-price quote." },
+                { phase: "03. BUILD", desc: "Base system + custom workflows." },
+                { phase: "04. LAUNCH", desc: "Deploy, train, and scale." }
+              ].map((step, i) => (
+                <div key={i} className="border border-[#222] bg-[#111] p-4">
+                  <div className="font-mono text-[10px] text-[#C9A84C] tracking-widest uppercase mb-2">{step.phase}</div>
+                  <p className="font-sans text-xs text-[#888888]">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
-      </section>
 
-      {/* Products Section (Slide 02) */}
-      <section id="products" className="py-32 relative z-10">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <FadeIn>
-            <div className="font-mono text-xs tracking-widest text-[#C9A84C] uppercase mb-4">ALROQ ECOSYSTEM</div>
-            <h2 className="font-bebas text-5xl md:text-7xl text-[#F5F3EE] mb-20">SIX PRODUCTS. EVERY INDUSTRY.</h2>
-          </FadeIn>
+        {/* Footer */}
+        <footer className="border border-[#222] bg-[#0A0A0A] p-8 flex flex-col md:flex-row justify-between items-center gap-4 mt-8">
+          <div className="font-bebas text-2xl text-[#555]">ALROQ</div>
+          <div className="font-mono text-[10px] tracking-widest text-[#555] text-center md:text-left">
+            AL ROQ SDN BHD · 202401046612 (1592458-P)<br/>
+            013-7977986 · info@al-roq.com
+          </div>
+          <div className="flex gap-4 font-mono text-[10px] tracking-widest text-[#555]">
+            <a href="#" className="hover:text-[#C9A84C]">FB</a>
+            <a href="#" className="hover:text-[#C9A84C]">IG</a>
+            <a href="#" className="hover:text-[#C9A84C]">IN</a>
+          </div>
+        </footer>
 
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "SERVION",
-                subtitle: "All-In-One Business ERP",
-                industries: "RETAIL · TRADING · LOGISTICS · MANUFACTURING · SERVICES · PROPERTY · CONSTRUCTION · WHOLESALE · DISTRIBUTION",
-                features: ["Multi-branch & multi-outlet", "CRM & Pipeline", "HR & Payroll", "Full Accounting", "Inventory Management", "Purchase & Procurement", "POS Integration"]
-              },
-              {
-                title: "YARPY",
-                subtitle: "Institution Management System",
-                industries: "KINDERGARTEN · PRESCHOOL · GOV SCHOOL · PRIVATE SCHOOL · UNIVERSITY · COLLEGE · TUITION CENTRE",
-                features: ["Student Registration", "Fee Collection", "Attendance Tracking", "Class Scheduling", "Parent Portal", "Academic Results", "Teacher Management"]
-              },
-              {
-                title: "SKILIO",
-                subtitle: "Learning Management System",
-                industries: "CORPORATES · TRAINING PROVIDERS · FREELANCE TRAINERS · NGOS · GOV AGENCIES · PROFESSIONAL BODIES",
-                features: ["Course Builder", "Live Class Scheduling", "Certification Issuance", "Learner Dashboards", "Progress Tracking", "Assessment Module", "White-label Branding"]
-              },
-              {
-                title: "VENDO",
-                subtitle: "F&B All-In-One Platform",
-                industries: "RESTAURANT · CAFÉ · CLOUD KITCHEN · FRANCHISE CHAIN · FOOD COURT · CATERING · BAKERY",
-                features: ["POS (Dine-in, Takeaway)", "Kitchen Display System", "Table Management", "Online Ordering Sync", "Inventory Tracking", "Recipe Costing", "Loyalty Points"]
-              },
-              {
-                title: "HULACE",
-                subtitle: "Event Connection Platform",
-                industries: "NETWORKING EVENTS · CONFERENCES · TRADE FAIRS · COMMUNITY GROUPS · CORPORATE EVENTS",
-                features: ["Event Discovery", "Ticketed RSVP", "Smart Networking", "QR Check-in", "Organiser Dashboard", "Sponsor Profiles", "Push Notifications"]
-              },
-              {
-                title: "KAUNTER",
-                subtitle: "Healthcare Operating System",
-                industries: "PHARMACY · KLINIK KESIHATAN · PRIVATE CLINIC · SPECIALIST CLINIC · HOSPITAL · DENTAL CLINIC",
-                features: ["Patient Registration (EMR)", "Queue Management", "Doctor Consultation Notes", "Prescription Management", "Drug Inventory Alerts", "Panel Insurance Claims", "Appointment Booking"]
-              }
-            ].map((product, idx) => (
-              <StaggerItem key={idx}>
-                <div className="bg-[#181818] border border-[#222222] border-l-2 border-l-alroq-gold p-8 h-full flex flex-col hover:border-[#C9A84C]/50 transition-colors">
-                  <h3 className="font-bebas text-3xl text-[#F5F3EE] mb-1">{product.title}</h3>
-                  <div className="font-mono text-[10px] tracking-widest text-[#C9A84C] uppercase mb-6">{product.subtitle}</div>
+      </main>
 
-                  <div className="mb-6">
-                    <div className="font-mono text-[9px] tracking-widest text-[#666666] uppercase mb-2">Industries</div>
-                    <p className="font-sans text-xs text-[#888888] leading-relaxed">{product.industries}</p>
+      {/* Modal Popup overlay */}
+      <AnimatePresence>
+        {activeModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            onClick={() => setActiveModal(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-[#0A0A0A] border border-[#C9A84C] w-full max-w-lg p-8 relative shadow-[0_0_50px_rgba(201,168,76,0.1)]"
+            >
+              <button
+                onClick={() => setActiveModal(null)}
+                className="absolute top-4 right-4 text-[#555] hover:text-[#F5F3EE] transition-colors"
+              >
+                <XCircle className="w-6 h-6" strokeWidth={1} />
+              </button>
+
+              {activeModal.type === 'product' && (
+                <>
+                  <div className="font-mono text-[10px] text-[#C9A84C] tracking-widest uppercase mb-2">System Details</div>
+                  <h2 className="font-bebas text-4xl text-[#F5F3EE] mb-1">{activeModal.data.title}</h2>
+                  <div className="font-mono text-xs text-[#888888] tracking-widest uppercase border-b border-[#222] pb-6 mb-6">
+                    {activeModal.data.subtitle}
                   </div>
 
-                  <div className="mt-auto pt-6 border-t border-[#2A2A2A]">
-                    <div className="font-mono text-[9px] tracking-widest text-[#666666] uppercase mb-3">Core Features</div>
-                    <ul className="space-y-2">
-                      {product.features.map((feat, i) => (
+                  <p className="font-sans text-sm text-[#F5F3EE] leading-relaxed mb-6">
+                    {activeModal.data.desc}
+                  </p>
+
+                  <div className="mb-6">
+                    <div className="font-mono text-[10px] tracking-widest text-[#555] uppercase mb-2">Target Industries</div>
+                    <p className="font-mono text-[10px] text-[#C9A84C] leading-relaxed">{activeModal.data.industries}</p>
+                  </div>
+
+                  <div>
+                    <div className="font-mono text-[10px] tracking-widest text-[#555] uppercase mb-3">Core Modules</div>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {activeModal.data.features.map((feat: string, i: number) => (
                         <li key={i} className="flex items-start gap-2">
                           <Check className="w-3 h-3 text-[#C9A84C] mt-1 flex-shrink-0" />
                           <span className="font-sans text-xs text-[#888888]">{feat}</span>
@@ -228,287 +306,39 @@ function App() {
                       ))}
                     </ul>
                   </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
+                </>
+              )}
 
-      {/* Speed & Process Section (Slide 03) */}
-      <section id="process" className="py-32 bg-[#0A0A0A] relative z-10 border-t border-[#222222]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <FadeIn>
-            <h2 className="font-bebas text-5xl md:text-7xl text-[#F5F3EE] mb-20 text-center">YOUR SOFTWARE. IN DAYS. NOT MONTHS.</h2>
-          </FadeIn>
+              {activeModal.type === 'service' && (
+                <>
+                  <div className="font-mono text-[10px] text-[#C9A84C] tracking-widest uppercase mb-2">Capability Details</div>
+                  <h2 className="font-bebas text-4xl text-[#F5F3EE] mb-6 border-b border-[#222] pb-6">
+                    {activeModal.data.title}
+                  </h2>
 
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
-            {[
-              { value: "72H", label: "FIRST BUILD LIVE" },
-              { value: "100%", label: "YOUR FLOW" },
-              { value: "∞", label: "SCALABLE" },
-              { value: "DAYS", label: "NOT MONTHS" }
-            ].map((stat, idx) => (
-              <StaggerItem key={idx} className="bg-[#111111] border border-[#222222] p-8 text-center">
-                <div className="font-bebas text-5xl text-[#C9A84C] mb-4">{stat.value}</div>
-                <div className="font-mono text-xs tracking-widest text-[#888888] uppercase">{stat.label}</div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
-          <div className="grid md:grid-cols-4 gap-8 mb-24 relative">
-            {/* Connecting line for desktop */}
-            <div className="hidden md:block absolute top-12 left-0 w-full h-[1px] bg-alroq-border -z-10"></div>
-
-            {[
-              { num: "01", title: "BROWSE & PICK", desc: "Explore ALROQ's ecosystem. Identify the product closest to your need." },
-              { num: "02", title: "TELL US WHAT'S MISSING", desc: "Share your workflow, missing features, and custom requirements." },
-              { num: "03", title: "WE BUILD YOUR VERSION", desc: "We add your desired flow and features on top of the base product." },
-              { num: "04", title: "GO LIVE. DONE.", desc: "Deploy. Train. Scale. No waiting. No broken promises." }
-            ].map((step, idx) => (
-              <FadeIn key={idx} delay={idx * 0.1} className="bg-[#0A0A0A]">
-                <div className="font-mono text-sm text-[#C9A84C] mb-6 border-b border-[#222222] pb-4">{step.num}</div>
-                <h4 className="font-mono text-xs tracking-widest text-[#F5F3EE] uppercase mb-4">{step.title}</h4>
-                <p className="font-sans text-sm text-[#888888] leading-relaxed">{step.desc}</p>
-              </FadeIn>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <FadeIn>
-              <div className="bg-[#181818] border border-[#222222] p-8 md:p-12 h-full">
-                <h4 className="font-mono text-sm tracking-widest text-[#666666] uppercase mb-8 pb-4 border-b border-[#2A2A2A]">THE OLD WAY</h4>
-                <ul className="space-y-6">
-                  {["6–18 month dev cycles", "Built from scratch every time", "Scope creep & missed deadlines", "One-size-fits-all solutions", "Agencies that disappear after launch"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-4 text-[#888888] font-sans text-sm">
-                      <X className="w-4 h-4 text-red-900 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="bg-[#181818] border border-[#C9A84C] p-8 md:p-12 h-full relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9A84C]/5 blur-[50px]"></div>
-                <h4 className="font-mono text-sm tracking-widest text-[#C9A84C] uppercase mb-8 pb-4 border-b border-[#C9A84C]/20">THE ALROQ WAY</h4>
-                <ul className="space-y-6 relative z-10">
-                  {["Base system ready in 72 hours", "Start with a proven product base", "Fixed scope, your features added", "100% tailored to your workflow", "Ongoing support and updates"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-4 text-[#F5F3EE] font-sans text-sm">
-                      <Check className="w-4 h-4 text-[#C9A84C] flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
-
-          <FadeIn delay={0.4}>
-            <div className="border border-[#C9A84C] p-8 md:p-12 text-center bg-[#0D0A00]">
-              <p className="font-sans text-lg text-[#C9A84C] max-w-3xl mx-auto leading-relaxed">
-                Pick our software. Tell us what's missing. Add your desired flow and features. Your budget, your flow. Everyone deserves to get their own software.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Services Section (Slide 04) */}
-      <section id="services" className="py-32 bg-[#0A0A0A] relative z-10 border-t border-[#222222]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <FadeIn>
-            <h2 className="font-bebas text-5xl md:text-7xl text-[#F5F3EE] mb-20 text-center">BEYOND PRODUCTS. WE BUILD WITH YOU.</h2>
-          </FadeIn>
-
-          <StaggerContainer className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                num: "01",
-                title: "WEBSITE DEVELOPMENT",
-                desc: "Professional websites built for speed, search, and conversion. Custom-designed for your brand and optimised for every device.",
-                bullets: ["Landing pages & company profiles", "E-commerce storefronts", "SEO-ready architecture", "CMS integration"]
-              },
-              {
-                num: "02",
-                title: "CUSTOM APP DEVELOPMENT",
-                desc: "End-to-end development of web and mobile applications tailored to your workflows. From MVP to full enterprise build.",
-                bullets: ["Web application (React, Laravel)", "iOS & Android (React Native)", "API & integrations", "Legacy system migration"]
-              },
-              {
-                num: "03",
-                title: "TRAINING & TUTORING",
-                desc: "One-on-one and group training for teams learning new platforms, tools, or digital skills. Practical and hands-on.",
-                bullets: ["Onboarding for ALROQ products", "Digital literacy workshops", "1-on-1 mentoring", "Post-training support"]
-              },
-              {
-                num: "04",
-                title: "RECRUITMENT SOLUTIONS",
-                desc: "End-to-end hiring support — from job scoping and candidate sourcing to interviews and onboarding.",
-                bullets: ["Candidate sourcing", "Technical interview coordination", "Tech & non-tech roles", "Retainer-based partnerships"]
-              }
-            ].map((service, idx) => (
-              <StaggerItem key={idx}>
-                <div className="bg-[#181818] border border-[#222222] p-8 lg:p-12 h-full hover:border-[#C9A84C]/30 transition-colors">
-                  <div className="font-mono text-sm text-[#C9A84C] mb-6">{service.num}</div>
-                  <h3 className="font-mono text-sm tracking-widest text-[#F5F3EE] uppercase mb-4">{service.title}</h3>
-                  <p className="font-sans text-sm text-[#888888] leading-relaxed mb-8">{service.desc}</p>
-                  <ul className="space-y-3">
-                    {service.bullets.map((bullet, i) => (
-                      <li key={i} className="flex items-start gap-3 text-[#666666] font-sans text-xs">
-                        <span className="text-[#C9A84C] mt-1">-</span>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </StaggerItem>
-            ))}
-
-            <StaggerItem className="md:col-span-2">
-              <div className="bg-[#181818] border border-[#222222] p-8 lg:p-12 hover:border-[#C9A84C]/30 transition-colors">
-                <div className="font-mono text-sm text-[#C9A84C] mb-6">05</div>
-                <h3 className="font-mono text-sm tracking-widest text-[#F5F3EE] uppercase mb-4">DIGITAL MARKETING & SOCIAL MEDIA MANAGEMENT</h3>
-                <p className="font-sans text-sm text-[#888888] leading-relaxed mb-8 max-w-3xl">Full-service digital marketing — SEO, paid ads, social media management, content creation, email campaigns, and monthly performance reporting.</p>
-                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-                  {["SEO — on-page, local SEO", "Google & Meta Ads", "Social media management", "Content creation & copy", "Email & WhatsApp marketing", "Monthly performance report"].map((bullet, i) => (
-                    <div key={i} className="flex items-start gap-3 text-[#666666] font-sans text-xs">
-                      <span className="text-[#C9A84C] mt-1">-</span>
-                      {bullet}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </StaggerItem>
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Customer Journey (Slide 05) */}
-      <section className="py-32 bg-[#050505] relative z-10 border-t border-[#222222]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <FadeIn>
-            <h2 className="font-bebas text-5xl md:text-7xl text-[#F5F3EE] mb-20 text-center">HOW WE WORK WITH YOU.</h2>
-          </FadeIn>
-
-          <div className="space-y-12">
-            {[
-              {
-                phase: "BROWSE",
-                steps: [
-                  { title: "Explore the Ecosystem", desc: "Visit al-roq.com or social media. Browse all 6 products and services." },
-                  { title: "Identify Your Fit", desc: "Find the product closest to your business needs. Self-qualify your industry." },
-                  { title: "Discover Features", desc: "Review modules, feature lists, and industry tags per product." }
-                ]
-              },
-              {
-                phase: "CONSULT",
-                steps: [
-                  { title: "Reach Out", desc: "Contact via WhatsApp, email, or website form. Response within 24 hours." },
-                  { title: "Discovery Call", desc: "ALROQ team learns your operations, pain points, and current tools." },
-                  { title: "Proposal & Quote", desc: "Receive a clear, fixed-price quotation. No surprises. No hidden charges." }
-                ]
-              },
-              {
-                phase: "BUILD",
-                steps: [
-                  { title: "Base System Ready", desc: "Your chosen product is configured and handed to you within 72 hours." },
-                  { title: "Custom Features Added", desc: "Your specific workflows, fields, and features are built on top." },
-                  { title: "Review & Refine", desc: "You test. You give feedback. We fix and refine until it is right." }
-                ]
-              },
-              {
-                phase: "LAUNCH",
-                steps: [
-                  { title: "Go Live", desc: "Full deployment to your environment — cloud, on-premise, or hybrid." },
-                  { title: "Team Training", desc: "ALROQ trains your staff. Manuals and guides provided." },
-                  { title: "Support & Scale", desc: "Ongoing technical support. Add new features as your business grows." }
-                ]
-              }
-            ].map((row, idx) => (
-              <FadeIn key={idx} delay={idx * 0.1}>
-                <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-start">
-                  <div className="w-full lg:w-48 flex-shrink-0 border-l-2 border-[#C9A84C] pl-4 py-2">
-                    <h4 className="font-mono text-sm tracking-widest text-[#F5F3EE] uppercase">{row.phase}</h4>
+                  <div>
+                    <div className="font-mono text-[10px] tracking-widest text-[#555] uppercase mb-3">Service Scope</div>
+                    <ul className="space-y-3">
+                      {activeModal.data.bullets.map((bullet: string, i: number) => (
+                        <li key={i} className="flex items-start gap-3 text-[#888888] font-sans text-sm border border-[#222] bg-[#111] p-3">
+                          <span className="text-[#C9A84C] mt-0.5">-</span>
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="grid sm:grid-cols-3 gap-6 w-full">
-                    {row.steps.map((step, i) => (
-                      <div key={i} className="bg-[#181818] border border-[#222222] p-6">
-                        <div className="font-mono text-[10px] text-[#C9A84C] uppercase tracking-widest mb-3 flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-[#C9A84C] rotate-45"></div>
-                          {step.title}
-                        </div>
-                        <p className="font-sans text-xs text-[#888888] leading-relaxed">{step.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+                </>
+              )}
 
-          <FadeIn delay={0.4} className="mt-20">
-            <p className="font-mono text-sm text-[#C9A84C] text-center tracking-widest uppercase border-y border-[#222222] py-8">
-              From the moment you browse ALROQ to the day your software goes live — we are with you at every step.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* CTA / Footer (Slide 06) */}
-      <section id="contact" className="py-40 relative z-10 bg-[#0A0A0A] flex flex-col items-center justify-center border-t border-[#222222] text-center overflow-hidden">
-        {/* Subtle background rings */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none">
-          {[1000, 800, 600, 400].map((size, i) => (
-            <div key={i} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-alroq-white" style={{ width: size, height: size }}></div>
-          ))}
-        </div>
-
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <FadeIn>
-            <h2 className="font-bebas text-8xl md:text-[120px] text-[#F5F3EE] tracking-widest mb-8">ALROQ</h2>
-            <div className="w-24 h-[2px] bg-[#C9A84C] mx-auto mb-8"></div>
-            <p className="font-bebas text-3xl md:text-4xl text-[#C9A84C] mb-20 tracking-wider">TAILORED TECHNOLOGY, DELIVERED FAST</p>
-          </FadeIn>
-
-          <StaggerContainer className="flex flex-col items-center gap-6 mb-20">
-            <StaggerItem>
-              <a href="tel:0137977986" className="flex items-center gap-4 text-[#F5F3EE] hover:text-[#C9A84C] transition-colors font-mono text-sm tracking-widest">
-                <Phone className="w-5 h-5" /> 013-7977986
-              </a>
-            </StaggerItem>
-            <StaggerItem>
-              <a href="mailto:info@al-roq.com" className="flex items-center gap-4 text-[#F5F3EE] hover:text-[#C9A84C] transition-colors font-mono text-sm tracking-widest">
-                <Mail className="w-5 h-5" /> info@al-roq.com
-              </a>
-            </StaggerItem>
-            <StaggerItem>
-              <a href="https://www.al-roq.com" className="flex items-center gap-4 text-[#F5F3EE] hover:text-[#C9A84C] transition-colors font-mono text-sm tracking-widest">
-                <Globe className="w-5 h-5" /> www.al-roq.com
-              </a>
-            </StaggerItem>
-          </StaggerContainer>
-
-          <FadeIn delay={0.4}>
-            <div className="flex flex-wrap justify-center gap-4 mb-32">
-              {['FACEBOOK', 'INSTAGRAM', 'LINKEDIN', 'TIKTOK'].map((social) => (
-                <a key={social} href="#" className="font-mono text-xs tracking-widest text-[#888888] border border-[#222222] px-6 py-3 hover:bg-alroq-border hover:text-[#F5F3EE] transition-all bg-[#111111]">
-                  {social}
+              <div className="mt-8 pt-6 border-t border-[#222]">
+                <a href="https://wa.me/60137977986" className="w-full block text-center border border-[#C9A84C] bg-[#C9A84C] text-black py-3 font-mono text-xs tracking-widest uppercase hover:bg-transparent hover:text-[#C9A84C] transition-colors">
+                  Request Information
                 </a>
-              ))}
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.6}>
-            <p className="font-mono text-[10px] text-[#666666] tracking-widest uppercase">
-              AL ROQ SDN BHD · 202401046612 (1592458-P)
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
-
-export default App;
