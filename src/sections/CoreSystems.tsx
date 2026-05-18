@@ -45,7 +45,10 @@ export default function CoreSystems({ onSelect, activeIndex, onActiveIndexChange
 
   useEffect(() => {
     if (activeTabRef.current && tabsRef.current) {
-      activeTabRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      const container = tabsRef.current;
+      const tab = activeTabRef.current;
+      const scrollLeft = tab.offsetLeft - container.clientWidth / 2 + tab.clientWidth / 2;
+      container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
     }
   }, [activeIndex]);
 

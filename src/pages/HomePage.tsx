@@ -1,10 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import servionVideo from '../assets/videos/servion.mp4';
-import skilioVideo from '../assets/videos/skilio.mp4';
-import yarpyVideo from '../assets/videos/yarpy.mp4';
-import vendoVideo from '../assets/videos/vendo.mp4';
-import hulaceVideo from '../assets/videos/hulace.mp4';
-import kaunterVideo from '../assets/videos/kaunter.mp4';
+import heroVideo from '../assets/videos/hero.mp4';
 import { products } from '../data/products';
 import Navbar from '../sections/Navbar';
 import Hero from '../sections/Hero';
@@ -13,17 +8,10 @@ import Capabilities from '../sections/Capabilities';
 import Deployment from '../sections/Deployment';
 import Footer from '../sections/Footer';
 import StatBanner from '../sections/StatBanner';
+import Industries from '../sections/Industries';
+import Tagline from '../sections/Tagline';
 import Modal from '../sections/Modal';
 import type { Product } from '../data/products';
-
-const productVideos: Record<string, string> = {
-  SERVION: servionVideo,
-  YARPY: yarpyVideo,
-  SKILIO: skilioVideo,
-  VENDO: vendoVideo,
-  HULACE: hulaceVideo,
-  KAUNTER: kaunterVideo,
-};
 import type { Service } from '../data/services';
 
 type ModalState =
@@ -33,7 +21,6 @@ type ModalState =
 
 export default function HomePage() {
   const [activeModal, setActiveModal] = useState<ModalState>(null);
-  const bgVideoRef = useRef<HTMLVideoElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -56,25 +43,16 @@ export default function HomePage() {
   return (
     <div className="min-h-screen text-[#555555] font-sans selection:bg-black/10 selection:text-black overflow-x-hidden">
 
-      {/* Fixed background video */}
+      {/* Fixed hero video background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <video
-          ref={bgVideoRef}
-          key={activeIndex}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src={productVideos[products[activeIndex].title]} type="video/mp4" />
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+          <source src={heroVideo} type="video/mp4" />
         </video>
-        {/* White overlay supaya content tetap readable */}
-        <div className="absolute inset-0 bg-white/85" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       {/* Background Grid */}
-      <div className="fixed inset-0 z-[1] pointer-events-none opacity-20">
+      <div className="fixed inset-0 z-[1] pointer-events-none opacity-10">
         <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -87,18 +65,26 @@ export default function HomePage() {
 
       <Navbar />
 
-      <main className="relative z-10 pt-24 px-6 pb-20 max-w-[1600px] mx-auto flex flex-col gap-8" style={{ position: 'relative' }}>
-        <CoreSystems 
-          onSelect={(p) => setActiveModal({ type: 'product', data: p })} 
+      {/* Hero full-bleed */}
+      <div className="relative z-10">
+        <Hero />
+      </div>
+
+      <main className="relative z-10 px-6 pt-8 pb-20 max-w-[1600px] mx-auto flex flex-col gap-8">
+        <CoreSystems
+          onSelect={(p) => setActiveModal({ type: 'product', data: p })}
           activeIndex={activeIndex}
           onActiveIndexChange={setActiveIndex}
         />
-        <Hero />
-        <StatBanner />
-        <div className="grid lg:grid-cols-2 gap-8">
-          <Capabilities onSelect={(s) => setActiveModal({ type: 'service', data: s })} />
-          <Deployment />
+        <div className="flex flex-col md:flex-row gap-0">
+          <StatBanner vertical />
+          <div className="flex-1">
+            <Tagline />
+          </div>
         </div>
+        <Capabilities onSelect={(s) => setActiveModal({ type: 'service', data: s })} />
+        <Industries />
+        <Deployment />
         <Footer />
       </main>
 

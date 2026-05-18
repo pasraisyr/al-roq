@@ -1,52 +1,64 @@
 import { ArrowRight } from 'lucide-react';
-import { useCounter } from '../hooks/useCounter';
-
-function StatNumber({ val, label }: { val: string; label: string }) {
-  const num = parseInt(val.replace(/\D/g, ''));
-  const suffix = val.replace(/[0-9]/g, '');
-  const count = useCounter(num);
-  return (
-    <div className="flex justify-between items-end border-b border-[#e0e0e0] pb-4 last:border-0 last:pb-0">
-      <div className="font-mono text-xs tracking-widest text-[#555555] uppercase">{label}</div>
-      <div className="font-bebas text-4xl text-black">{count}{suffix}</div>
-    </div>
-  );
-}
-
-const stats = [
-  { val: "12+", label: "Industries" },
-  { val: "10+", label: "Products" },
-  { val: "50+", label: "Modules" },
-  { val: "100+", label: "Companies" },
-];
 
 export default function Hero() {
   return (
-    <div className="grid lg:grid-cols-3 gap-8 h-auto lg:h-[450px]">
-      <div className="lg:col-span-2 border border-[#e0e0e0] bg-[#f7f7f7] p-8 lg:p-12 flex flex-col justify-center gap-8 relative overflow-hidden">
-        <div>
-          <div className="font-mono text-xs tracking-widest text-black uppercase mb-6 flex items-center gap-2">
-            <span className="inline-block w-4 h-[1px] bg-black"></span>
-            The Software Factory
-          </div>
-          <h1 className="font-bebas text-5xl md:text-7xl lg:text-[90px] leading-[0.85] text-black tracking-wide mb-6">
-            YOUR DIGITAL<br />BACKBONE.
-          </h1>
-          <p className="font-sans text-base md:text-lg text-[#555555] max-w-xl leading-relaxed">
-            We build ready-to-deploy software products that solve real business problems — fast, affordable, and tailored to your operations. If your business runs on it, we have already built it.
-          </p>
-        </div>
-        <div className="flex gap-4">
-          <a href="#systems" className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-black uppercase hover:text-[#555555] transition-colors border border-[#e0e0e0] px-6 py-3 bg-white">
-            View Systems <ArrowRight className="w-3 h-3" />
-          </a>
-        </div>
+    <div className="relative w-full overflow-hidden h-screen">
+
+      {/* No extra overlay — global fixed bg handles it */}
+
+      {/* Grid pattern */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="hero-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#fff" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hero-grid)" />
+        </svg>
       </div>
 
-      <div className="border border-[#e0e0e0] bg-[#f7f7f7] p-8 flex flex-col gap-6 justify-center">
-        {stats.map((stat, i) => (
-          <StatNumber key={i} val={stat.val} label={stat.label} />
-        ))}
+      {/* Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 md:p-16">
+        <div className="font-mono text-[10px] tracking-widest text-white/50 uppercase mb-6 flex items-center gap-2">
+          <span className="inline-block w-4 h-[1px] bg-white/50" />
+          The Software Factory
+          <span className="inline-block w-4 h-[1px] bg-white/50" />
+        </div>
+        <h1 className="font-bebas text-[clamp(3.5rem,12vw,9rem)] leading-[0.85] text-white tracking-wide mb-6">
+          YOUR DIGITAL<br />BACKBONE.
+        </h1>
+        <p className="font-sans text-base md:text-lg text-white/60 max-w-xl leading-relaxed mb-10">
+          We build ready-to-deploy software products that solve real business problems — fast, affordable, and tailored to your operations.
+        </p>
+
+        <div className="flex gap-3 mb-16">
+          <a
+            href="#systems"
+            className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-white uppercase border border-white/30 px-6 py-3 hover:bg-white hover:text-black transition-colors"
+          >
+            View Systems <ArrowRight className="w-3 h-3" />
+          </a>
+          <a
+            href="https://wa.me/60137977986"
+            className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-black uppercase bg-white px-6 py-3 hover:bg-white/80 transition-colors"
+          >
+            Get Started
+          </a>
+        </div>
+
+        <div className="flex gap-10">
+          {[
+            { val: '12+', label: 'Industries' },
+            { val: '10+', label: 'Products' },
+            { val: '100+', label: 'Companies' },
+          ].map((s) => (
+            <div key={s.label} className="text-center">
+              <div className="font-bebas text-3xl md:text-4xl text-white leading-none">{s.val}</div>
+              <div className="font-mono text-[9px] tracking-widest text-white/40 uppercase mt-1">{s.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
