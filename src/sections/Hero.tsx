@@ -20,17 +20,14 @@ export default function Hero() {
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 md:p-16">
-        <div className="font-mono text-[10px] tracking-widest text-white/50 uppercase mb-6 flex items-center gap-2">
-          <span className="inline-block w-4 h-[1px] bg-white/50" />
+        <div className="font-mono text-xs tracking-widest text-white/70 uppercase mb-6 flex items-center gap-3">
+          <span className="inline-block w-6 h-[1px] bg-white/50" />
           The Software Factory
-          <span className="inline-block w-4 h-[1px] bg-white/50" />
+          <span className="inline-block w-6 h-[1px] bg-white/50" />
         </div>
-        <h1 className="font-bebas text-[clamp(3.5rem,12vw,9rem)] leading-[0.85] text-white tracking-wide mb-6">
-          YOUR DIGITAL<br />BACKBONE.
+        <h1 className="font-bebas text-[clamp(3.5rem,12vw,9rem)] leading-[0.85] text-white tracking-wide mb-10">
+          SOFTWARE BUILT FOR<br />REAL-WORLD OPERATIONS.
         </h1>
-        <p className="font-sans text-base md:text-lg text-white/60 max-w-xl leading-relaxed mb-10">
-          We build ready-to-deploy software products that solve real business problems — fast, affordable, and tailored to your operations.
-        </p>
 
         <div className="flex gap-3 mb-16">
           <a
