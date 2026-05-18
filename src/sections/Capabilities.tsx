@@ -27,13 +27,13 @@ export default function Capabilities({ onSelect }: Props) {
       {/* Header */}
       <div className="bg-black px-8 py-6 flex items-end justify-between">
         <div>
-          <div className="font-mono text-[10px] tracking-widest text-white/40 uppercase flex items-center gap-2 mb-2">
-            <span className="inline-block w-4 h-[1px] bg-white/30" />
+          <div className="font-mono text-[10px] tracking-widest text-white/70 uppercase flex items-center gap-2 mb-2">
+            <span className="inline-block w-4 h-[1px] bg-white/50" />
             What We Do
           </div>
           <h2 className="font-bebas text-5xl md:text-6xl text-white tracking-wide leading-none">SERVICES</h2>
         </div>
-        <p className="hidden md:block font-sans text-sm text-white/40 max-w-xs text-right leading-relaxed">
+        <p className="font-sans text-sm text-white/70 max-w-xs text-right leading-relaxed">
           End-to-end solutions built for businesses that move fast.
         </p>
       </div>
@@ -64,7 +64,7 @@ export default function Capabilities({ onSelect }: Props) {
                   {isActive && (
                     <div className="flex flex-wrap gap-2 mt-1">
                       {svc.bullets.slice(0, 2).map((b, j) => (
-                        <span key={j} className="font-mono text-[9px] tracking-widest uppercase text-white/40">
+                        <span key={j} className="font-sans text-xs text-white">
                           — {b}
                         </span>
                       ))}
@@ -102,8 +102,7 @@ export default function Capabilities({ onSelect }: Props) {
               ) : (
                 <div className={`w-full h-full bg-gradient-to-br ${placeholderColors[activeIndex]}`} />
               )}
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/20" />
+            
             </motion.div>
           </AnimatePresence>
 
@@ -117,7 +116,7 @@ export default function Capabilities({ onSelect }: Props) {
             </div>
             <div className="flex flex-wrap gap-2">
               {active.bullets.map((b, j) => (
-                <span key={j} className="font-mono text-[9px] tracking-widest uppercase text-white/60 border border-white/10 px-2 py-0.5">
+                <span key={j} className="font-sans text-xs text-white border border-white/30 px-2 py-0.5">
                   {b}
                 </span>
               ))}
