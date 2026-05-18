@@ -37,7 +37,7 @@ export default function Capabilities({ onSelect }: Props) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 6 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute left-full top-0 ml-4 z-30 w-64 bg-white border border-black shadow-lg p-4 pointer-events-none"
+                  className="hidden md:block absolute left-full top-0 ml-4 z-30 w-64 bg-white border border-black shadow-lg p-4 pointer-events-none"
                 >
                   <div className="font-mono text-[10px] text-[#aaa] tracking-widest uppercase mb-3">Service Scope</div>
                   <ul className="space-y-2">

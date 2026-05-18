@@ -12,7 +12,7 @@ export default function Deployment() {
         <h2 className="font-bebas text-4xl text-black tracking-wide mb-2">DEPLOYMENT PROTOCOL</h2>
         <p className="font-sans text-base text-[#555555] mb-8">From the moment you browse to the day your software goes live — we are with you at every step.</p>
       </div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {steps.map((step, i) => (
           <div key={i} className="border border-[#e0e0e0] bg-white p-4">
             <div className="font-mono text-[10px] text-black tracking-widest uppercase mb-2">{step.phase}</div>

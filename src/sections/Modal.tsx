@@ -29,7 +29,7 @@ export default function Modal({ activeModal, onClose }: Props) {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-white border border-[#e0e0e0] w-full max-w-lg p-8 relative shadow-xl"
+            className="bg-white border border-[#e0e0e0] w-full max-w-lg p-6 md:p-8 relative shadow-xl max-h-[90vh] overflow-y-auto"
           >
             <button onClick={onClose} className="absolute top-4 right-4 text-[#aaa] hover:text-black transition-colors">
               <XCircle className="w-6 h-6" strokeWidth={1} />

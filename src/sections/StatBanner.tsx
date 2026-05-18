@@ -14,7 +14,7 @@ function StatBlock({ val, label }: { val: string; label: string }) {
   const count = useCounter(isNumeric ? num : 0);
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-center py-6 border-r border-[#e0e0e0] last:border-r-0">
+    <div className="flex-1 flex flex-col items-center justify-center py-6 border-r border-b sm:border-b-0 border-[#e0e0e0] last:border-r-0 even:border-r-0 sm:even:border-r">
       <div className="font-bebas text-4xl md:text-5xl text-black">
         {isNumeric ? `${count}${suffix}` : val}
       </div>
@@ -25,7 +25,7 @@ function StatBlock({ val, label }: { val: string; label: string }) {
 
 export default function StatBanner() {
   return (
-    <div className="border border-[#e0e0e0] bg-white/80 backdrop-blur-sm flex">
+    <div className="border border-[#e0e0e0] bg-white/80 backdrop-blur-sm grid grid-cols-2 sm:flex">
       {stats.map((stat, i) => (
         <StatBlock key={i} val={stat.val} label={stat.label} />
       ))}

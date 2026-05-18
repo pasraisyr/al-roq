@@ -29,6 +29,8 @@ interface Props {
 export default function CoreSystems({ onSelect, activeIndex, onActiveIndexChange }: Props) {
   const active = products[activeIndex];
   const videoRef = useRef<HTMLVideoElement>(null);
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const activeTabRef = useRef<HTMLDivElement>(null);
 
   const goTo = (index: number) => {
     onActiveIndexChange(index);
@@ -38,6 +40,12 @@ export default function CoreSystems({ onSelect, activeIndex, onActiveIndexChange
     if (videoRef.current) {
       videoRef.current.load();
       videoRef.current.play();
+    }
+  }, [activeIndex]);
+
+  useEffect(() => {
+    if (activeTabRef.current && tabsRef.current) {
+      activeTabRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
   }, [activeIndex]);
 
@@ -53,7 +61,7 @@ export default function CoreSystems({ onSelect, activeIndex, onActiveIndexChange
       <div className="flex flex-col">
 
         {/* Video */}
-        <div className="relative bg-black overflow-hidden" style={{ height: '460px' }}>
+        <div className="relative bg-black overflow-hidden" style={{ height: 'clamp(240px, 50vw, 460px)' }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={active.title}
@@ -99,35 +107,34 @@ export default function CoreSystems({ onSelect, activeIndex, onActiveIndexChange
           </div>
 
           {/* Info overlay bottom */}
-          <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/80 to-transparent p-6">
+          <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/90 to-transparent p-6">
             <p className="font-sans text-sm text-white/80 leading-relaxed max-w-xl">{active.desc}</p>
-            <div className="flex flex-wrap gap-2 mt-2">
+            <div className="flex flex-wrap items-center gap-2 mt-3">
               {active.industries.split('·').map((ind, index) => (
                 <span key={index} className="font-mono text-[10px] text-black bg-white px-2 py-0.5 tracking-widest uppercase">
                   {ind.trim()}
                 </span>
               ))}
+              <button
+                onClick={() => onSelect(active)}
+                className="ml-auto font-mono text-[10px] tracking-widest uppercase border border-white/40 text-white px-4 py-1.5 hover:bg-white hover:text-black transition-colors shrink-0"
+              >
+                View Details
+              </button>
             </div>
           </div>
-
-          {/* View details button */}
-          <button
-            onClick={() => onSelect(active)}
-            className="absolute bottom-6 right-6 z-10 font-mono text-[10px] tracking-widest uppercase border border-white/40 text-white px-4 py-2 hover:bg-white hover:text-black transition-colors"
-          >
-            View Details
-          </button>
         </div>
 
         {/* Bottom — horizontal product list */}
-        <div className="flex border-t border-[#e0e0e0]">
+        <div ref={tabsRef} className="flex overflow-x-auto md:overflow-x-visible border-t border-[#e0e0e0] scroll-smooth">
           {products.map((prod, i) => {
             const isActive = i === activeIndex;
             return (
               <div
                 key={i}
+                ref={isActive ? activeTabRef : null}
                 onClick={() => goTo(i)}
-                className={`relative flex-1 flex items-center justify-center p-4 cursor-pointer border-r border-[#e0e0e0] last:border-r-0 transition-all overflow-hidden ${isActive ? 'bg-black' : 'bg-white hover:bg-[#f7f7f7]'}`}
+                className={`relative shrink-0 md:flex-1 flex items-center justify-center w-[130px] md:w-auto h-16 md:h-auto md:py-4 cursor-pointer border-r border-[#e0e0e0] last:border-r-0 transition-all overflow-hidden ${isActive ? 'bg-black' : 'bg-white hover:bg-[#f7f7f7]'}`}
               >
                 {/* progress bar */}
                 {isActive && (
@@ -139,8 +146,13 @@ export default function CoreSystems({ onSelect, activeIndex, onActiveIndexChange
                   />
                 )}
                 {prod.img
-                  ? <img src={prod.img} alt={prod.title} className="h-8 w-full object-contain px-3" style={isActive ? { filter: 'invert(1)' } : {}} />
-                  : <span className={`font-bebas text-lg ${isActive ? 'text-white' : 'text-[#ccc]'}`}>{prod.title}</span>
+                  ? (
+                    <>
+                      <img src={prod.img} alt={prod.title} className="hidden md:block h-8 w-full object-contain px-3" style={isActive ? { filter: 'invert(1)' } : {}} />
+                      <span className={`md:hidden font-bebas text-sm tracking-widest ${isActive ? 'text-white' : 'text-[#555]'}`}>{prod.title}</span>
+                    </>
+                  )
+                  : <span className={`font-bebas text-sm md:text-lg tracking-widest ${isActive ? 'text-white' : 'text-[#555]'}`}>{prod.title}</span>
                 }
               </div>
             );
