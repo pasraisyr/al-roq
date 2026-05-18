@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { ArrowRight, Check, Plus, ChevronRight, XCircle } from 'lucide-react';
+import { ArrowRight, Check, Plus, XCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import alroqLogo from './assets/alroq-logo-cropped.png';
 import servionImg from './assets/servion-black.png';
