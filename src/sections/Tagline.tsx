@@ -1,6 +1,6 @@
 export default function Tagline() {
   return (
-    <section className="border border-[#e0e0e0] bg-black py-10 md:py-14 px-8 text-center flex flex-col items-center justify-center h-full">
+    <section className="border border-[#e0e0e0] bg-black px-8 text-center flex flex-col items-center justify-center flex-1">
       <div className="font-mono text-[10px] tracking-widest text-white/80 uppercase flex items-center justify-center gap-2 mb-5">
         <span className="inline-block w-6 h-[1px] bg-white/60" />
         Built For The Real World

@@ -22,11 +22,9 @@ export default function Navbar() {
         </div>
         <div className={`hidden md:flex gap-8 text-xs font-mono tracking-widest uppercase transition-colors duration-300 ${scrolled ? 'text-[#555555]' : 'text-white/80'}`}>
           <a href="#systems" className="hover:text-black transition-colors">Systems</a>
-          <a href="#capabilities" className="hover:text-black transition-colors">Capabilities</a>
-          <a href="#deployment" className="hover:text-black transition-colors">Deployment</a>
         </div>
         <div className="flex items-center gap-3">
-          <a href="https://wa.me/60137977986" className={`hidden md:inline-block border px-4 py-1.5 text-[10px] font-mono tracking-widest uppercase transition-all duration-300 ${scrolled ? 'border-black text-black hover:bg-black hover:text-white' : 'border-white/60 text-white hover:bg-white hover:text-black'}`}>
+          <a href="https://wa.me/60137977986" className={`hidden md:inline-block border px-5 py-2 text-xs font-mono tracking-widest uppercase transition-all duration-300 ${scrolled ? 'border-black text-black hover:bg-black hover:text-white' : 'border-white/60 text-white hover:bg-white hover:text-black'}`}>
             Initiate Contact
           </a>
           <button

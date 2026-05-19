@@ -1,10 +1,17 @@
 import { ArrowRight } from 'lucide-react';
+import heroVideo from '../assets/videos/hero.mp4';
 
 export default function Hero() {
   return (
     <div className="relative w-full overflow-hidden h-screen">
 
-      {/* No extra overlay — global fixed bg handles it */}
+      {/* Video background */}
+      <div className="absolute inset-0 bg-black">
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
 
       {/* Grid pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
