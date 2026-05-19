@@ -4,22 +4,18 @@ export default function OtherServices() {
   return (
     <section className="bg-white border-t border-black/10">
       {/* Header */}
-      <div className="px-10 py-4 border-b border-black/10 flex items-end justify-between">
+      <div className="px-4 md:px-10 py-4 border-b border-black/10 flex items-end justify-between">
         <div>
-          <p className="font-mono text-[10px] tracking-widest text-black/40 uppercase mb-1">
-            Beyond Software
-          </p>
-          <h2 className="font-bebas text-4xl text-black tracking-wide leading-none">
-            OTHER SERVICES
-          </h2>
+          <p className="font-mono text-[10px] tracking-widest text-black/40 uppercase mb-1">Beyond Software</p>
+          <h2 className="font-bebas text-3xl md:text-4xl text-black tracking-wide leading-none">OTHER SERVICES</h2>
         </div>
-        <p className="font-sans text-sm text-black/50 max-w-xs text-right leading-relaxed">
+        <p className="hidden md:block font-sans text-sm text-black/50 max-w-xs text-right leading-relaxed">
           Full-stack support for businesses building on ALROQ.
         </p>
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 p-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 p-3 md:p-4">
         {services.map((svc, i) => (
           <div
             key={i}

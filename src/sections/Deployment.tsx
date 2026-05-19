@@ -27,7 +27,7 @@ export default function Deployment() {
       className="bg-black flex flex-col flex-1 min-h-0"
     >
       {/* Header strip */}
-      <div className="flex items-center justify-between px-10 py-5 border-b border-white/10 shrink-0">
+      <div className="flex items-center justify-between px-4 md:px-10 py-4 border-b border-white/10 shrink-0">
         <div className="flex items-center gap-3">
           <span className="inline-block w-5 h-[1px] bg-white/30" />
           <span className="font-mono text-[10px] tracking-widest text-white/40 uppercase">Deployment Protocol</span>
@@ -40,7 +40,7 @@ export default function Deployment() {
         {steps.map((step, i) => (
           <div
             key={i}
-            className="flex-1 flex items-center border-b border-white/10 last:border-b-0 px-10 group cursor-default hover:bg-white/[0.03] transition-colors duration-300"
+            className="flex-1 flex items-center border-b border-white/10 last:border-b-0 px-4 md:px-10 group cursor-default hover:bg-white/[0.03] transition-colors duration-300"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? 'translateX(0)' : 'translateX(-24px)',
@@ -50,7 +50,7 @@ export default function Deployment() {
             {/* Big number */}
             <span
               className="font-bebas text-white/40 group-hover:text-white/60 transition-colors duration-300 shrink-0 leading-none select-none"
-              style={{ fontSize: 'clamp(4rem, 10vw, 9rem)', width: '14vw' }}
+              style={{ fontSize: 'clamp(2.5rem, 10vw, 9rem)', width: '14vw', minWidth: '3rem' }}
             >
               {step.num}
             </span>
@@ -58,13 +58,13 @@ export default function Deployment() {
             {/* Step name — fills middle */}
             <h3
               className="font-bebas text-white leading-none flex-1 tracking-wide"
-              style={{ fontSize: 'clamp(2rem, 4.5vw, 4.5rem)' }}
+              style={{ fontSize: 'clamp(1.4rem, 4.5vw, 4.5rem)' }}
             >
               {step.phase}
             </h3>
 
             {/* Desc — right */}
-            <p className="font-sans text-sm text-white leading-relaxed max-w-xs text-right shrink-0">
+            <p className="hidden md:block font-sans text-sm text-white leading-relaxed max-w-xs text-right shrink-0">
               {step.desc}
             </p>
           </div>

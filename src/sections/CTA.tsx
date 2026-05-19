@@ -6,13 +6,13 @@ export default function CTA() {
       {/* Request a Demo */}
       <a
         href="#contact"
-        className="group flex items-center justify-between px-12 py-10 bg-white border-r border-black/10 hover:bg-black transition-colors duration-300"
+        className="group flex items-center justify-between px-6 md:px-12 py-8 md:py-10 bg-white border-r border-black/10 hover:bg-black transition-colors duration-300"
       >
         <div>
           <p className="font-mono text-[9px] tracking-widest text-black/40 group-hover:text-white/40 uppercase mb-2 transition-colors duration-300">
             Get started
           </p>
-          <h3 className="font-bebas text-5xl text-black group-hover:text-white tracking-wide leading-none transition-colors duration-300">
+          <h3 className="font-bebas text-3xl md:text-5xl text-black group-hover:text-white tracking-wide leading-none transition-colors duration-300">
             Request a Demo
           </h3>
         </div>
@@ -22,13 +22,13 @@ export default function CTA() {
       {/* Start Building */}
       <a
         href="#systems"
-        className="group flex items-center justify-between px-12 py-10 bg-black border-none hover:bg-white transition-colors duration-300"
+        className="group flex items-center justify-between px-6 md:px-12 py-8 md:py-10 bg-black border-none hover:bg-white transition-colors duration-300"
       >
         <div>
           <p className="font-mono text-[9px] tracking-widest text-white/40 group-hover:text-black/40 uppercase mb-2 transition-colors duration-300">
             Explore ecosystem
           </p>
-          <h3 className="font-bebas text-5xl text-white group-hover:text-black tracking-wide leading-none transition-colors duration-300">
+          <h3 className="font-bebas text-3xl md:text-5xl text-white group-hover:text-black tracking-wide leading-none transition-colors duration-300">
             Start Building
           </h3>
         </div>

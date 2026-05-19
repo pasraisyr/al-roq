@@ -39,7 +39,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/10 bg-white px-10 py-1 flex flex-col md:flex-row justify-between items-center gap-1 md:gap-3">
+    <footer className="border-t border-black/10 bg-white px-4 md:px-10 py-3 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-3">
       <div className="font-bebas text-2xl text-black/30 tracking-wide">ALROQ</div>
 
       <div className="font-mono text-[10px] tracking-widest text-black/30 text-center">

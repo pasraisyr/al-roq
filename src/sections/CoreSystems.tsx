@@ -53,7 +53,7 @@ function ProductRow({
     <div
       onClick={onClick}
       className="relative overflow-hidden border-b border-white/10 last:border-b-0 cursor-pointer group"
-      style={{ height: 'calc((100vh - 57px) / 3)', flexShrink: 0 }}
+      style={{ height: '220px' }}
     >
       {/* Video — full background */}
       {video && (
@@ -70,31 +70,28 @@ function ProductRow({
       )}
 
       {/* Scrim */}
-      <div className="absolute inset-0 bg-black/55 group-hover:bg-black/45 transition-colors duration-300" />
+      <div className="absolute inset-0 bg-black/40" />
+      {/* Left gradient for text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
 
       {/* Content overlay */}
-      <div className="relative z-10 flex items-center gap-6 h-full pl-6 pr-4">
+      <div className="relative z-10 flex items-center gap-3 md:gap-6 h-full pl-4 md:pl-6 pr-3 md:pr-4">
         {/* Index */}
-        <span className="font-mono text-[9px] text-white/40 shrink-0 w-5">{String(index + 1).padStart(2, '0')}</span>
+        <span className="font-mono text-[9px] text-white/40 shrink-0 w-4 md:w-5">{String(index + 1).padStart(2, '0')}</span>
 
-        {/* Logo */}
+        {/* Logo only — no name */}
         {product.img && (
-          <img src={product.img} alt={product.title} className="h-6 w-16 object-contain shrink-0" style={{ filter: 'invert(1)' }} />
+          <img src={product.img} alt={product.title} className="h-8 w-28 md:w-36 object-contain shrink-0" style={{ filter: 'invert(1)' }} />
         )}
 
-        {/* Name + subtitle */}
-        <div className="shrink-0">
-          <h3 className="font-bebas leading-none text-white whitespace-nowrap" style={{ fontSize: 'clamp(1.6rem, 2.8vw, 3rem)' }}>
-            {product.title}
-          </h3>
-          <p className="font-mono text-[8px] text-white/40 tracking-widest uppercase">{product.subtitle}</p>
-        </div>
+        {/* Subtitle */}
+        <p className="font-mono text-[8px] text-white/40 tracking-widest uppercase shrink-0">{product.subtitle}</p>
 
-        {/* Desc */}
-        <p className="text-[11px] text-white/60 leading-snug w-48 shrink-0">{product.desc}</p>
+        {/* Desc — hidden on mobile */}
+        <p className="hidden md:block text-[11px] text-white/60 leading-snug w-48 shrink-0">{product.desc}</p>
 
-        {/* Keywords */}
-        <div className="flex-1 flex flex-wrap gap-1.5 items-center">
+        {/* Keywords — hidden on mobile */}
+        <div className="hidden lg:flex flex-1 flex-wrap gap-1.5 items-center">
           {product.features.map((f) => (
             <span key={f} className="font-mono text-[9px] text-white/70 border border-white/25 px-2 py-0.5 whitespace-nowrap">
               {f}
@@ -102,12 +99,15 @@ function ProductRow({
           ))}
         </div>
 
+        {/* Spacer on mobile */}
+        <div className="flex-1 md:hidden" />
+
         {/* View Details */}
         <button
           onClick={(e) => { e.stopPropagation(); onViewDetails(); }}
-          className="shrink-0 font-mono text-[9px] text-white tracking-widest uppercase border border-white/50 px-4 py-2 hover:bg-white hover:text-black transition-colors"
+          className="shrink-0 font-mono text-[8px] md:text-[9px] text-white tracking-widest uppercase border border-white/50 px-2 md:px-4 py-1.5 md:py-2 hover:bg-white hover:text-black transition-colors"
         >
-          View Details
+          View
         </button>
       </div>
     </div>
@@ -116,19 +116,15 @@ function ProductRow({
 
 export default function CoreSystems({ onSelect: _onSelect, activeIndex, onActiveIndexChange }: Props) {
   return (
-    <section id="systems" className="flex bg-white" style={{ height: 'calc(100vh - 57px)' }}>
-      {/* Merged left column */}
-      <div className="w-24 shrink-0 flex items-center justify-center border-r border-black/15">
-        <h2
-          className="font-bebas text-black select-none whitespace-nowrap"
-          style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', fontSize: '5rem', letterSpacing: '0.05em' }}
-        >
-          OUR SOFTWARE
-        </h2>
+    <section id="systems" className="flex flex-col bg-white">
+      {/* Top header */}
+      <div className="px-4 md:px-10 py-5 border-b border-black/10 shrink-0 flex items-center justify-between">
+        <h2 className="font-bebas text-4xl md:text-6xl text-black tracking-wide leading-none">OUR SOFTWARE</h2>
+        <span className="font-mono text-[10px] text-black/30 tracking-widest uppercase hidden md:block">6 platforms · one ecosystem</span>
       </div>
 
       {/* Scrollable rows — 3 visible at a time */}
-      <div className="flex-1 overflow-y-auto relative" style={{ scrollbarWidth: 'none' }}>
+      <div>
         {products.map((prod, i) => (
           <ProductRow
             key={prod.title}

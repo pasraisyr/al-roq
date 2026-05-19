@@ -17,7 +17,7 @@ export default function QuoteSection() {
   }, []);
 
   return (
-    <div ref={ref} className="relative z-10 bg-white h-screen flex flex-col items-center justify-center px-12 md:px-24 text-center border-b border-[#e0e0e0] pb-20">
+    <div ref={ref} className="relative z-10 bg-white h-screen flex flex-col items-center justify-center px-6 md:px-24 text-center border-b border-[#e0e0e0] pb-20">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={visible ? { opacity: 1, y: 0 } : {}}
