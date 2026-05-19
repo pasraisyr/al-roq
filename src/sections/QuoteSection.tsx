@@ -29,7 +29,7 @@ export default function QuoteSection() {
         <span className="inline-block w-6 h-[1px] bg-[#ccc]" />
       </motion.div>
 
-      <p className="font-bebas text-[clamp(1.6rem,5vw,3.5rem)] text-black tracking-wide leading-tight max-w-6xl mx-auto w-full text-center">
+      <p className="font-sans font-medium text-[clamp(1.6rem,4.5vw,3.2rem)] text-black tracking-tight leading-[1.1] max-w-5xl mx-auto w-full text-center">
         {words.map((word, i) => (
           <motion.span
             key={i}
@@ -43,16 +43,7 @@ export default function QuoteSection() {
         ))}
       </p>
 
-      {/* Scroll indicator */}
-      <div className="mt-8 flex flex-col items-center gap-2 animate-bounce">
-        <span className="font-mono text-[10px] tracking-widest uppercase text-[#999]">Scroll to explore</span>
-        <svg width="16" height="24" viewBox="0 0 16 24" fill="none" className="text-[#ccc]">
-          <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" strokeWidth="1.5"/>
-          <circle cx="8" cy="7" r="2" fill="currentColor">
-            <animateTransform attributeName="transform" type="translate" values="0 0;0 8;0 0" dur="1.5s" repeatCount="indefinite"/>
-          </circle>
-        </svg>
-      </div>
+
     </div>
   );
 }
