@@ -6,6 +6,7 @@ import CoreSystems from '../sections/CoreSystems';
 // import Capabilities from '../sections/Capabilities';
 import Deployment from '../sections/Deployment';
 import QuoteSection from '../sections/QuoteSection';
+import QuoteSecond from '../sections/QuoteSecond';
 import Footer from '../sections/Footer';
 import StatBanner from '../sections/StatBanner';
 import Industries from '../sections/Industries';
@@ -59,16 +60,12 @@ export default function HomePage() {
           activeIndex={activeIndex}
           onActiveIndexChange={setActiveIndex}
         />
-        <div className="flex flex-col" style={{ height: 'calc(100vh - 57px)' }}>
+        <div className="flex flex-col min-h-[calc(100vh-57px)]">
           <StatBanner />
           <Deployment />
         </div>
         <div className="flex flex-col justify-end" style={{ minHeight: '100vh' }}>
-          <div className="py-12 text-center">
-            <p className="font-bebas text-3xl md:text-4xl text-black/40 tracking-wide max-w-4xl mx-auto uppercase px-8 md:px-0">
-              "Connecting workflows, automating processes, and enabling faster execution."
-            </p>
-          </div>
+          <QuoteSecond />
           <OtherServices onSelectService={(s) => setActiveModal({ type: 'service', data: s })} />
           <Industries />
           <CTA />
