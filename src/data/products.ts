@@ -12,6 +12,7 @@ export interface Product {
   industries: string;
   features: string[];
   desc: string;
+  link?: string;
 }
 
 export const products: Product[] = [
@@ -21,7 +22,8 @@ export const products: Product[] = [
     img: servionImg,
     industries: "RETAIL · LOGISTICS · MANUFACTURING · CONSTRUCTION",
     features: ["Multi-branch & multi-outlet", "CRM & Pipeline", "HR & Payroll", "Full Accounting", "Inventory Management", "Purchase & Procurement", "POS Integration"],
-    desc: "The central operating system for your enterprise. Integrate accounting, CRM, HR, inventory, and analytics into a single, cohesive ontology."
+    desc: "The central operating system for your enterprise. Integrate accounting, CRM, HR, inventory, and analytics into a single, cohesive ontology.",
+    link: "https://servion.my"
   },
   {
     title: "YARPY",
@@ -29,7 +31,8 @@ export const products: Product[] = [
     img: yarbyImg,
     industries: "SCHOOLS · UNIVERSITIES · ACADEMIES",
     features: ["Student Registration", "Fee Collection", "Attendance Tracking", "Class Scheduling", "Parent Portal", "Academic Results", "Teacher Management"],
-    desc: "Built for educational institutions to manage students, fees, attendance, and grading in one secure platform."
+    desc: "Built for educational institutions to manage students, fees, attendance, and grading in one secure platform.",
+    link: "https://yarpy.tech/"
   },
   {
     title: "SKILIO",
@@ -37,7 +40,8 @@ export const products: Product[] = [
     img: skilioImg,
     industries: "CORPORATES · TRAINERS · NGOS",
     features: ["Course Builder", "Live Class Scheduling", "Certification Issuance", "Learner Dashboards", "Progress Tracking", "Assessment Module", "White-label Branding"],
-    desc: "Deploy customized learning platforms for corporates and training providers with full assessment and tracking."
+    desc: "Deploy customized learning platforms for corporates and training providers with full assessment and tracking.",
+    link: "https://skilio.my"
   },
   {
     title: "VENDO",
@@ -45,7 +49,8 @@ export const products: Product[] = [
     img: vendoImg,
     industries: "RESTAURANT · CAFÉ · FRANCHISE",
     features: ["POS (Dine-in, Takeaway)", "Kitchen Display System", "Table Management", "Online Ordering Sync", "Inventory Tracking", "Recipe Costing", "Loyalty Points"],
-    desc: "The ultimate F&B management system. Handle orders, kitchen displays, and complex inventory routing in real-time."
+    desc: "The ultimate F&B management system. Handle orders, kitchen displays, and complex inventory routing in real-time.",
+    link: "https://vendo.asia/"
   },
   {
     title: "HULACE",

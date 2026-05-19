@@ -26,40 +26,40 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 md:p-16">
-        <div className="font-mono text-xs tracking-widest text-white/70 uppercase mb-6 flex items-center gap-3">
-          <span className="inline-block w-6 h-[1px] bg-white/50" />
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:p-16">
+        <div className="font-mono text-[10px] md:text-xs tracking-widest text-white/70 uppercase mb-4 md:mb-6 flex items-center gap-3">
+          <span className="inline-block w-4 md:w-6 h-[1px] bg-white/50" />
           The Software Factory
-          <span className="inline-block w-6 h-[1px] bg-white/50" />
+          <span className="inline-block w-4 md:w-6 h-[1px] bg-white/50" />
         </div>
-        <h1 className="font-bebas text-[clamp(3.5rem,12vw,9rem)] leading-[0.85] text-white tracking-wide mb-10">
-          SOFTWARE BUILT FOR<br />REAL-WORLD OPERATIONS.
+        <h1 className="font-sans font-medium text-[clamp(2rem,9vw,3.5rem)] md:text-[clamp(3.2rem,8vw,6.5rem)] leading-[1.05] text-white tracking-tight mb-6 md:mb-10">
+          Software built for<br />real-world operations.
         </h1>
 
-        <div className="flex gap-3 mb-16">
+        <div className="flex gap-3 mb-10 md:mb-16">
           <a
             href="#systems"
-            className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-white uppercase border border-white/30 px-6 py-3 hover:bg-white hover:text-black transition-colors"
+            className="inline-flex items-center gap-2 font-mono text-[10px] md:text-xs tracking-widest text-white uppercase border border-white/30 px-4 py-2.5 md:px-6 md:py-3 hover:bg-white hover:text-black transition-colors"
           >
             Our Software <ArrowRight className="w-3 h-3" />
           </a>
           <a
             href="#services"
-            className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-black uppercase bg-white px-6 py-3 hover:bg-white/80 transition-colors"
+            className="inline-flex items-center gap-2 font-mono text-[10px] md:text-xs tracking-widest text-black uppercase bg-white px-4 py-2.5 md:px-6 md:py-3 hover:bg-white/80 transition-colors"
           >
             Our Services
           </a>
         </div>
 
-        <div className="flex gap-10">
+        <div className="flex gap-6 md:gap-10">
           {[
             { val: '12+', label: 'Industries' },
             { val: '10+', label: 'Products' },
             { val: '100+', label: 'Companies' },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <div className="font-bebas text-3xl md:text-4xl text-white leading-none">{s.val}</div>
-              <div className="font-mono text-[9px] tracking-widest text-white/40 uppercase mt-1">{s.label}</div>
+              <div className="font-bebas text-2xl md:text-4xl text-white leading-none">{s.val}</div>
+              <div className="font-mono text-[8px] md:text-[9px] tracking-widest text-white/40 uppercase mt-1">{s.label}</div>
             </div>
           ))}
         </div>

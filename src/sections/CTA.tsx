@@ -5,7 +5,9 @@ export default function CTA() {
     <section className="grid grid-cols-1 md:grid-cols-2 border-t border-black/10">
       {/* Request a Demo */}
       <a
-        href="#contact"
+        href="https://wa.me/60137977986?text=Hi%20AL%20ROQ%2C%20I%20would%20like%20to%20request%20a%20demo."
+        target="_blank"
+        rel="noopener noreferrer"
         className="group flex items-center justify-between px-6 md:px-12 py-8 md:py-10 bg-white border-r border-black/10 hover:bg-black transition-colors duration-300"
       >
         <div>

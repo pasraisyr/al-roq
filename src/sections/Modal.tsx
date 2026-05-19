@@ -81,11 +81,40 @@ export default function Modal({ activeModal, onClose }: Props) {
               </>
             )}
 
-            <div className="mt-8 pt-6 border-t border-[#e0e0e0]">
-              <a href="https://wa.me/60137977986" className="w-full block text-center border border-black bg-black text-white py-3 font-mono text-xs tracking-widest uppercase hover:bg-transparent hover:text-black transition-colors">
-                Request Information
-              </a>
-            </div>
+            {activeModal.type === 'product' ? (
+              <div className="mt-8 pt-6 border-t border-[#e0e0e0]">
+                {activeModal.data.link ? (
+                  <a
+                    href={activeModal.data.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full block text-center border border-black bg-black text-white py-3 font-mono text-xs tracking-widest uppercase hover:bg-transparent hover:text-black transition-colors"
+                  >
+                    Visit Website
+                  </a>
+                ) : (
+                  <a
+                    href={`https://wa.me/60137977986?text=Hello%20AL%20ROQ%2C%20I%20would%20like%20to%20request%20information%20about%20${encodeURIComponent(activeModal.data.title)}.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full block text-center border border-black bg-black text-white py-3 font-mono text-xs tracking-widest uppercase hover:bg-transparent hover:text-black transition-colors"
+                  >
+                    Request Information
+                  </a>
+                )}
+              </div>
+            ) : (
+              <div className="mt-8 pt-6 border-t border-[#e0e0e0]">
+                <a
+                  href="https://wa.me/60137977986"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full block text-center border border-black bg-black text-white py-3 font-mono text-xs tracking-widest uppercase hover:bg-transparent hover:text-black transition-colors"
+                >
+                  Request Information
+                </a>
+              </div>
+            )}
           </motion.div>
         </motion.div>
       )}

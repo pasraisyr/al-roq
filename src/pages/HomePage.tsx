@@ -69,7 +69,7 @@ export default function HomePage() {
               "Connecting workflows, automating processes, and enabling faster execution."
             </p>
           </div>
-          <OtherServices />
+          <OtherServices onSelectService={(s) => setActiveModal({ type: 'service', data: s })} />
           <Industries />
           <CTA />
           <Footer />
