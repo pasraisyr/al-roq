@@ -28,11 +28,8 @@ export default function Deployment() {
     >
       {/* Header strip */}
       <div className="flex items-center justify-between px-4 md:px-10 py-4 border-b border-white/10 shrink-0">
-        <div className="flex items-center gap-3">
-          <span className="inline-block w-5 h-[1px] bg-white/30" />
-          <span className="font-mono text-[10px] tracking-widest text-white/40 uppercase">Deployment Protocol</span>
-        </div>
-        <span className="font-bebas text-white/10 text-xl tracking-widest">ALROQ</span>
+        <h2 className="font-bebas text-4xl md:text-5xl text-white tracking-wide leading-none">Deployment Protocol</h2>
+        <span className="font-bebas text-white/20 text-xl tracking-widest hidden md:block">ALROQ</span>
       </div>
 
       {/* 4 steps — equal flex rows */}

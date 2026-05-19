@@ -26,13 +26,11 @@ function ProductRow({
   product,
   index,
   isActive: _isActive,
-  onClick,
   onViewDetails,
 }: {
   product: Product;
   index: number;
   isActive?: boolean;
-  onClick: () => void;
   onViewDetails: () => void;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -51,7 +49,7 @@ function ProductRow({
 
   return (
     <div
-      onClick={onClick}
+      onClick={onViewDetails}
       className="relative overflow-hidden border-b border-white/10 last:border-b-0 cursor-pointer group"
       style={{ height: '220px' }}
     >
@@ -79,13 +77,13 @@ function ProductRow({
         {/* Index */}
         <span className="font-mono text-[9px] text-white/40 shrink-0 w-4 md:w-5">{String(index + 1).padStart(2, '0')}</span>
 
-        {/* Logo only — no name */}
-        {product.img && (
-          <img src={product.img} alt={product.title} className="h-8 w-28 md:w-36 object-contain shrink-0" style={{ filter: 'invert(1)' }} />
-        )}
-
-        {/* Subtitle */}
-        <p className="font-mono text-[8px] text-white/40 tracking-widest uppercase shrink-0">{product.subtitle}</p>
+        {/* Logo + subtitle below */}
+        <div className="flex flex-col items-start gap-1 shrink-0">
+          {product.img && (
+            <img src={product.img} alt={product.title} className="h-8 w-28 md:w-36 object-contain" style={{ filter: 'invert(1)' }} />
+          )}
+          <p className="font-mono text-[8px] text-white/70 tracking-widest uppercase">{product.subtitle}</p>
+        </div>
 
         {/* Desc — hidden on mobile */}
         <p className="hidden md:block text-[11px] text-white/60 leading-snug w-48 shrink-0">{product.desc}</p>
@@ -99,16 +97,7 @@ function ProductRow({
           ))}
         </div>
 
-        {/* Spacer on mobile */}
-        <div className="flex-1 md:hidden" />
-
-        {/* View Details */}
-        <button
-          onClick={(e) => { e.stopPropagation(); onViewDetails(); }}
-          className="shrink-0 font-mono text-[8px] md:text-[9px] text-white tracking-widest uppercase border border-white/50 px-2 md:px-4 py-1.5 md:py-2 hover:bg-white hover:text-black transition-colors"
-        >
-          View
-        </button>
+        <div className="flex-1" />
       </div>
     </div>
   );
@@ -131,7 +120,6 @@ export default function CoreSystems({ onSelect: _onSelect, activeIndex, onActive
             product={prod}
             index={i}
             isActive={i === activeIndex}
-            onClick={() => onActiveIndexChange(i)}
             onViewDetails={() => { onActiveIndexChange(i); _onSelect(prod); }}
           />
         ))}

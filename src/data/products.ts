@@ -17,7 +17,7 @@ export interface Product {
 export const products: Product[] = [
   {
     title: "SERVION",
-    subtitle: "Business ERP",
+    subtitle: "Business Operation Software",
     img: servionImg,
     industries: "RETAIL · LOGISTICS · MANUFACTURING · CONSTRUCTION",
     features: ["Multi-branch & multi-outlet", "CRM & Pipeline", "HR & Payroll", "Full Accounting", "Inventory Management", "Purchase & Procurement", "POS Integration"],

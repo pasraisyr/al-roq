@@ -7,7 +7,7 @@ const industries = [
 export default function Industries() {
   return (
     <section className="border border-[#e0e0e0] bg-[#f7f7f7] py-6 overflow-hidden">
-      <div className="px-8 mb-5">
+      <div className="px-4 md:px-8 mb-5">
         <div className="font-mono text-[10px] tracking-widest text-[#999] uppercase flex items-center gap-2">
           <span className="inline-block w-4 h-[1px] bg-[#999]" />
           Industries We Serve

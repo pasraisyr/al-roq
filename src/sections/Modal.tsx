@@ -38,7 +38,7 @@ export default function Modal({ activeModal, onClose }: Props) {
             {activeModal.type === 'product' && (
               <>
                 <div className="font-mono text-[10px] text-black tracking-widest uppercase mb-2">System Details</div>
-                <h2 className="font-bebas text-4xl text-black mb-1">{activeModal.data.title}</h2>
+                <h2 className="font-bebas text-3xl md:text-4xl text-black mb-1">{activeModal.data.title}</h2>
                 <div className="font-mono text-xs text-[#555555] tracking-widest uppercase border-b border-[#e0e0e0] pb-6 mb-6">
                   {activeModal.data.subtitle}
                 </div>
@@ -64,7 +64,7 @@ export default function Modal({ activeModal, onClose }: Props) {
             {activeModal.type === 'service' && (
               <>
                 <div className="font-mono text-[10px] text-black tracking-widest uppercase mb-2">Capability Details</div>
-                <h2 className="font-bebas text-4xl text-black mb-6 border-b border-[#e0e0e0] pb-6">
+                <h2 className="font-bebas text-3xl md:text-4xl text-black mb-6 border-b border-[#e0e0e0] pb-6">
                   {activeModal.data.title}
                 </h2>
                 <div>

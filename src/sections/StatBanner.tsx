@@ -15,7 +15,7 @@ function StatBlock({ val, label }: { val: string; label: string }) {
 
   return (
     <div className="flex-1 flex flex-col items-center justify-center py-6 border-r border-b sm:border-b-0 border-[#e0e0e0] last:border-r-0 even:border-r-0 sm:even:border-r">
-      <div className="font-bebas text-4xl md:text-5xl text-black">
+      <div className="font-bebas text-2xl md:text-5xl text-black">
         {isNumeric ? `${count}${suffix}` : val}
       </div>
       <div className="font-mono text-[9px] tracking-widest text-[#999] uppercase mt-1">{label}</div>
