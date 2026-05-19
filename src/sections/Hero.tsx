@@ -3,7 +3,7 @@ import heroVideo from '../assets/videos/hero.mp4';
 
 export default function Hero() {
   return (
-    <div className="relative w-full overflow-hidden h-screen">
+    <div className="relative w-full overflow-hidden min-h-screen">
 
       {/* Video background */}
       <div className="absolute inset-0 bg-black">
@@ -41,13 +41,13 @@ export default function Hero() {
             href="#systems"
             className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-white uppercase border border-white/30 px-6 py-3 hover:bg-white hover:text-black transition-colors"
           >
-            View Systems <ArrowRight className="w-3 h-3" />
+            Our Software <ArrowRight className="w-3 h-3" />
           </a>
           <a
-            href="https://wa.me/60137977986"
+            href="#services"
             className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-black uppercase bg-white px-6 py-3 hover:bg-white/80 transition-colors"
           >
-            Get Started
+            Our Services
           </a>
         </div>
 

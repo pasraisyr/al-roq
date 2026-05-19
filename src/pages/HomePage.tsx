@@ -65,7 +65,7 @@ export default function HomePage() {
         </div>
         <div className="flex flex-col justify-end" style={{ minHeight: '100vh' }}>
           <div className="py-12 text-center">
-            <p className="font-bebas text-3xl md:text-4xl text-black/40 tracking-wide max-w-4xl mx-auto uppercase">
+            <p className="font-bebas text-3xl md:text-4xl text-black/40 tracking-wide max-w-4xl mx-auto uppercase px-8 md:px-0">
               "Connecting workflows, automating processes, and enabling faster execution."
             </p>
           </div>

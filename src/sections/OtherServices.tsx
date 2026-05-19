@@ -2,7 +2,7 @@ import { services } from "../data/services";
 
 export default function OtherServices() {
   return (
-    <section className="bg-[#f5f5f5] border-t border-black/10">
+    <section id="services" className="bg-[#f5f5f5] border-t border-black/10">
       {/* Header */}
       <div className="px-4 md:px-10 py-4 border-b border-black/10 flex items-end justify-between">
         <div>

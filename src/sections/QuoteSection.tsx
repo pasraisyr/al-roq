@@ -17,7 +17,7 @@ export default function QuoteSection() {
   }, []);
 
   return (
-    <div ref={ref} className="relative z-10 bg-white h-screen flex flex-col items-center justify-center px-6 md:px-24 text-center border-b border-[#e0e0e0] pb-20">
+    <div ref={ref} className="relative z-10 bg-white flex flex-col items-center justify-center px-10 md:px-24 text-center border-b border-[#e0e0e0] py-12 md:py-32">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={visible ? { opacity: 1, y: 0 } : {}}
@@ -29,7 +29,7 @@ export default function QuoteSection() {
         <span className="inline-block w-6 h-[1px] bg-[#ccc]" />
       </motion.div>
 
-      <p className="font-bebas text-[clamp(2rem,4vw,3.5rem)] text-black tracking-wide leading-tight max-w-6xl mx-auto w-full">
+      <p className="font-bebas text-[clamp(1.6rem,5vw,3.5rem)] text-black tracking-wide leading-tight max-w-6xl mx-auto w-full text-center">
         {words.map((word, i) => (
           <motion.span
             key={i}
@@ -44,7 +44,7 @@ export default function QuoteSection() {
       </p>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 flex flex-col items-center gap-2 animate-bounce">
+      <div className="mt-8 flex flex-col items-center gap-2 animate-bounce">
         <span className="font-mono text-[10px] tracking-widest uppercase text-[#999]">Scroll to explore</span>
         <svg width="16" height="24" viewBox="0 0 16 24" fill="none" className="text-[#ccc]">
           <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" strokeWidth="1.5"/>
