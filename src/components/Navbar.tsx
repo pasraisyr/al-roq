@@ -117,13 +117,7 @@ export default function Navbar() {
         )}
       </header>
 
-      {/* Mobile floating CTA */}
-      <a
-        href="https://wa.me/60137977986"
-        className="md:hidden fixed bottom-6 right-6 z-50 bg-black text-white font-mono text-[10px] tracking-widest uppercase px-6 py-3 shadow-lg active:scale-95 transition-transform"
-      >
-        Initiate Contact
-      </a>
+
     </>
   );
 }
